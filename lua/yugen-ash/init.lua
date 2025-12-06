@@ -77,7 +77,7 @@ function M.colorscheme()
 	end
 
 	vim.opt.termguicolors = true
-	vim.g.colors_name = "yugen"
+	vim.g.colors_name = "yugen-ash"
 
 	local theme = require("yugen.theme").get(config)
 

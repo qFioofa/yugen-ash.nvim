@@ -10,7 +10,7 @@
 local M = {}
 
 function M.get(config)
-	local p = require("yugen.palette")
+	local p = require("yugen-ash.palette")
 
 	local theme = {}
 	local groups = config.groups or {}
