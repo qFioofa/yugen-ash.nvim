@@ -79,7 +79,7 @@ function M.colorscheme()
 	vim.opt.termguicolors = true
 	vim.g.colors_name = "yugen-ash"
 
-	local theme = require("yugen.theme").get(config)
+	local theme = require("yugen-ash.theme").get(config)
 
 	for group, color in pairs(theme) do
 		if config.highlight_groups[group] == nil then
