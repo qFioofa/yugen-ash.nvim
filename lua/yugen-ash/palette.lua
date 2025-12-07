@@ -8,7 +8,7 @@
 -- - Added new highlight groups
 -- - Removed unused components
 -- - Replaced colors
-
+--
 local variants = {
 	main = {
 		placeholder = "#303030",
@@ -32,6 +32,10 @@ local variants = {
 		crimson = "#bf616a",
 		tide = "#79a0aa",
 		sage = "#9db89c",
+		gold = "#D4A017",
+		seafoam = "#8dd3c3",
+		rust = "#bc735c",
+		frost = "#96a8ad",
 		none = "none",
 	},
 }
