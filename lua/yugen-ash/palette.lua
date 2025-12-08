@@ -8,7 +8,7 @@
 -- - Added new highlight groups
 -- - Removed unused components
 -- - Replaced colors
---
+
 local variants = {
 	main = {
 		placeholder = "#303030",
