@@ -237,16 +237,6 @@ function M.get(config)
 		SignChange = { link = "GitSignsChange" },
 		SignDelete = { link = "GitSignsDelete" },
 
-		-- lukas-reineke/indent-blankline.nvim
-		IndentBlanklineChar = { fg = p.color600 },
-		IndentBlanklineContextChar = { fg = p.color100 },
-		IblIndent = { fg = p.color600 },
-		IblScope = { fg = p.color100 },
-
-		-- nvimdev/indentmini.nvim
-		IndentLine = { fg = p.color600 },
-		IndentLineCurrent = { fg = p.color100 },
-
 		-- NvimTree
 		NvimTreeFileDirty = { fg = p.color200 },
 		NvimTreeFileNew = { fg = p.color200 },
@@ -284,6 +274,18 @@ function M.get(config)
 		CmpItemKindMethod = { fg = p.primary },
 		CmpItemKindSnippet = { fg = p.primary },
 		CmpItemKindVariable = { fg = p.primary },
+
+		-- Noice
+		["NoiceMini"] = { bg = "#1d1d1d", fg = "#1d1d1d" },
+		["NoiceCmdlineIcon"] = { fg = "#d1d1d1" },
+		["NoiceCmdlineIconSearch"] = { fg = p.primary },
+		["NoiceCmdlinePopup"] = { bg = "#1d1d1d" },
+		["NoiceCmdlinePopupBorder"] = { fg = p.primary },
+
+		-- Notify highlights
+		["NotifyBackground"] = { bg = "#1d1d1d" },
+		["NotifyBorder"] = { fg = p.primary },
+		["NotifyTitle"] = { fg = p.primary, bold = true },
 
 		-- ray-x/lsp_signature.nvim
 		LspSignatureActiveParameter = { bg = p.placeholder },
