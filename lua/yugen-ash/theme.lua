@@ -23,7 +23,7 @@ function M.get(config)
 	styles.nc_background = (config.dim_nc_background and not config.transparent and groups.panel) or styles.background
 
 	theme = {
-		ColorColumn = { bg = p.placeholder },
+		ColorColumn = { bg = p.color400 },
 		Conceal = { fg = p.color200, bg = p.none },
 		CurSearch = { link = "IncSearch" },
 		Cursor = { fg = p.color200, bg = p.placeholder },
@@ -81,7 +81,7 @@ function M.get(config)
 		VertSplit = { fg = groups.border },
 		Visual = { fg = p.color200, bg = p.color600 },
 		WarningMsg = { fg = p.warning },
-		Whitespace = { fg = p.color700 },
+		Whitespace = { fg = p.color600 },
 		WildMenu = { link = "IncSearch" },
 
 		Constant = { fg = p.violet },
@@ -171,10 +171,13 @@ function M.get(config)
 		["@keyword.return"] = { link = "Keyword" },
 		["@keyword.function"] = { fg = p.crimson },
 		["@keyword.operator"] = { fg = p.color400 },
-		["@keyword.new"] = { fg = p.gold },
-
+		["@keyword.type"] = { link = "Type" },
 		["@keyword.coroutine"] = { fg = p.seafoam },
-		["@class"] = { fg = p.gold },
+		["@keyword.conditional.ternary"] = { link = "boolean" },
+
+		["@conditional"] = { fg = p.tide },
+
+		["@class"] = { fg = p.crimson },
 		["@label"] = { fg = p.color500 },
 		["@method"] = { fg = p.gold },
 		["@operator"] = { fg = p.tide },
@@ -185,13 +188,14 @@ function M.get(config)
 		["@punctuation.bracket"] = { fg = p.color400 },
 		["@string"] = { link = "String" },
 		["@string.escape"] = { link = "String" },
-		["@tag"] = { fg = p.primary },
+		["@tag"] = { fg = p.sage },
 		["@tag.delimiter"] = { fg = p.color400 },
 		["@tag.attribute"] = { fg = p.gold, style = styles.italic },
 		["@text"] = { fg = p.color200 },
 		["@title"] = { fg = groups.headings.h1, style = "bold" },
 		["@type"] = { link = "Type" },
 		["@type.builtin"] = { link = "Type" },
+		["@type.definition"] = { link = "Type" },
 		TSURI = { fg = groups.link },
 
 		-- tsx
@@ -217,6 +221,14 @@ function M.get(config)
 		typescriptObjectType = { fg = p.color200 },
 		["@keyword.operator.instanceof"] = { link = "Operator" },
 
+		-- json
+		["@string.json"] = { link = "String" },
+		["@number.json"] = { link = "Number" },
+		["@boolean.json"] = { fg = p.gold },
+		["@null.json"] = { fg = p.gold },
+		["@punctuation.delimiter.json"] = { fg = "#your_punctuation_color" },
+		["@punctuation.bracket.json"] = { fg = "#your_bracket_color" },
+
 		-- lua
 		luaTSConstructor = { fg = p.color200 },
 
@@ -241,15 +253,15 @@ function M.get(config)
 		NvimTreeFileDirty = { fg = p.color200 },
 		NvimTreeFileNew = { fg = p.color200 },
 		NvimTreeFileRenamed = { fg = p.color200 },
-		NvimTreeFileStaged = { fg = p.color200 },
+		NvimTreeFileStaged = { fg = p.seafoam },
 		NvimTreeFolderIcon = { fg = p.color400 },
 		NvimTreeFolderName = { fg = p.color300 },
 		NvimTreeIndentMarker = { fg = p.color600 },
-		NvimTreeGitDeleted = { fg = groups.color200 },
+		NvimTreeGitDeleted = { fg = p.rust },
 		NvimTreeGitDirty = { fg = p.color200 },
 		NvimTreeGitIgnored = { fg = groups.git_ignore },
 		NvimTreeGitMerge = { fg = groups.git_merge },
-		NvimTreeGitNew = { fg = groups.git_add },
+		NvimTreeGitNew = { fg = p.sage },
 		NvimTreeGitRenamed = { fg = groups.git_rename },
 		NvimTreeGitStaged = { fg = groups.git_stage },
 		NvimTreeImageFile = { fg = p.color100 },
