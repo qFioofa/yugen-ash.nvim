@@ -23,12 +23,13 @@ function M.get(config)
 	styles.nc_background = (config.dim_nc_background and not config.transparent and groups.panel) or styles.background
 
 	theme = {
-		ColorColumn = { bg = p.color400 },
+		LineNr = { fg = p.color500 },
+		CursorLine = { fg = p.primary },
+
 		Conceal = { fg = p.color200, bg = p.none },
 		CurSearch = { link = "IncSearch" },
 		Cursor = { fg = p.color200, bg = p.placeholder },
 		CursorColumn = { bg = p.color800 },
-		CursorLine = { bg = p.color600 },
 		CursorLineNr = { fg = p.primary },
 		DarkenedPanel = { bg = groups.panel },
 		DarkenedStatusline = { bg = groups.panel },
@@ -46,7 +47,6 @@ function M.get(config)
 		FoldColumn = { fg = p.color200 },
 		Folded = { fg = p.color200, bg = groups.panel },
 		IncSearch = { fg = p.color200, bg = p.color600 },
-		LineNr = { fg = p.primary },
 		MatchParen = { fg = p.color200, bg = p.color700 },
 		ModeMsg = { fg = p.color200 },
 		MoreMsg = { fg = p.color200 },
@@ -259,7 +259,7 @@ function M.get(config)
 		NvimTreeIndentMarker = { fg = p.color600 },
 		NvimTreeGitDeleted = { fg = p.rust },
 		NvimTreeGitDirty = { fg = p.color200 },
-		NvimTreeGitIgnored = { fg = groups.git_ignore },
+		NvimTreeGitIgnored = { fg = groups.git_ignore, style = "italic" },
 		NvimTreeGitMerge = { fg = groups.git_merge },
 		NvimTreeGitNew = { fg = p.sage },
 		NvimTreeGitRenamed = { fg = groups.git_rename },
