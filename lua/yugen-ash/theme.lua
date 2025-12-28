@@ -24,13 +24,13 @@ function M.get(config)
 
 	theme = {
 		LineNr = { fg = p.color500 },
-		CursorLine = { fg = p.primary },
+		CursorLine = { fg = p.primary, bg = p.primary, bold = true },
+		CursorLineNr = { fg = p.color700, bold = true },
 
 		Conceal = { fg = p.color200, bg = p.none },
 		CurSearch = { link = "IncSearch" },
 		Cursor = { fg = p.color200, bg = p.placeholder },
 		CursorColumn = { bg = p.color800 },
-		CursorLineNr = { fg = p.primary },
 		DarkenedPanel = { bg = groups.panel },
 		DarkenedStatusline = { bg = groups.panel },
 		DiffAdd = { bg = p.color700 },
@@ -51,7 +51,7 @@ function M.get(config)
 		ModeMsg = { fg = p.color200 },
 		MoreMsg = { fg = p.color200 },
 		NonText = { fg = p.color500 },
-		Normal = { fg = p.color200, bg = styles.background },
+		Normal = { fg = p.color700, bg = styles.background },
 		NormalFloat = { fg = p.color200, bg = styles.float_background },
 		NormalNC = { fg = p.color200, bg = styles.nc_background },
 		NvimInternalError = { fg = p.error, bg = p.color700 },
@@ -221,16 +221,22 @@ function M.get(config)
 		typescriptObjectType = { fg = p.color200 },
 		["@keyword.operator.instanceof"] = { link = "Operator" },
 
+		-- javascript
+		["@variable.builtin.javascript"] = { fg = p.violet },
+		["@keyword.operator.javascript"] = { fg = p.tide },
+		["@keyword.type.javascript"] = { link = "Keyword" },
+
+		-- svelte
+		["@tag.attribute.svelte"] = { link = "keyword" },
+
 		-- json
-		["@string.json"] = { link = "String" },
-		["@number.json"] = { link = "Number" },
-		["@boolean.json"] = { fg = p.gold },
-		["@null.json"] = { fg = p.gold },
-		["@punctuation.delimiter.json"] = { fg = "#your_punctuation_color" },
-		["@punctuation.bracket.json"] = { fg = "#your_bracket_color" },
+		["@property.jsonc"] = { fg = p.violet },
+		["@string.jsonc"] = { link = "String" },
+		["@constant.builtin.jsonc"] = { fg = p.gold },
 
 		-- lua
 		luaTSConstructor = { fg = p.color200 },
+		["@keyword.operator.lua"] = { link = "Operator" },
 
 		-- vim.lsp.buf.document_highlight()
 		LspReferenceText = { bg = p.color800 },
@@ -302,6 +308,8 @@ function M.get(config)
 		-- ray-x/lsp_signature.nvim
 		LspSignatureActiveParameter = { bg = p.placeholder },
 
+		-- Markdown
+		RenderMarkdownCode = { bg = p.color700 },
 		-- Telescope
 		TelescopeMatching = { fg = p.primary },
 		TelescopeNormal = { fg = p.color200 },
