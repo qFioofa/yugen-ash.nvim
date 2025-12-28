@@ -24,7 +24,7 @@ function M.get(config)
 
 	theme = {
 		LineNr = { fg = p.color500 },
-		CursorLine = { fg = p.primary, bg = p.primary, bold = true },
+		CursorLine = { fg = p.rust },
 		CursorLineNr = { fg = p.color700, bold = true },
 
 		Conceal = { fg = p.color200, bg = p.none },
@@ -51,7 +51,7 @@ function M.get(config)
 		ModeMsg = { fg = p.color200 },
 		MoreMsg = { fg = p.color200 },
 		NonText = { fg = p.color500 },
-		Normal = { fg = p.color700, bg = styles.background },
+		Normal = { fg = p.color200, bg = styles.background },
 		NormalFloat = { fg = p.color200, bg = styles.float_background },
 		NormalNC = { fg = p.color200, bg = styles.nc_background },
 		NvimInternalError = { fg = p.error, bg = p.color700 },
@@ -112,7 +112,7 @@ function M.get(config)
 		Delimiter = { fg = p.color200 },
 		SpecialComment = { fg = p.color500 },
 
-		Comment = { fg = p.color500 },
+		Comment = { fg = p.color600 },
 
 		Underlined = { style = "underline" },
 		Bold = { style = "bold" },
