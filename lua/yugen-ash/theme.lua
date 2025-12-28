@@ -23,9 +23,9 @@ function M.get(config)
 	styles.nc_background = (config.dim_nc_background and not config.transparent and groups.panel) or styles.background
 
 	theme = {
-		LineNr = { fg = p.color500 },
-		CursorLine = { fg = p.rust },
-		CursorLineNr = { fg = p.color700, bold = true },
+		LineNr = { fg = p.color400 },
+		CursorLine = { fg = p.rust, bg = "none" },
+		CursorLineNr = { fg = p.crimson },
 
 		Conceal = { fg = p.color200, bg = p.none },
 		CurSearch = { link = "IncSearch" },
@@ -110,9 +110,9 @@ function M.get(config)
 		Special = { fg = p.rust },
 		Tag = { fg = p.primary },
 		Delimiter = { fg = p.color200 },
-		SpecialComment = { fg = p.color500 },
+		SpecialComment = { fg = p.color300 },
 
-		Comment = { fg = p.color600 },
+		Comment = { fg = p.color400 },
 
 		Underlined = { style = "underline" },
 		Bold = { style = "bold" },
