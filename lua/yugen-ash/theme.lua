@@ -51,7 +51,7 @@ function M.get(config)
 		ModeMsg = { fg = p.color200 },
 		MoreMsg = { fg = p.color200 },
 		NonText = { fg = p.color500 },
-		Normal = { fg = p.color200, bg = styles.background },
+		Normal = { fg = p.color400, bg = p.color700 },
 		NormalFloat = { fg = p.color200, bg = styles.float_background },
 		NormalNC = { fg = p.color200, bg = styles.nc_background },
 		NvimInternalError = { fg = p.error, bg = p.color700 },
@@ -257,10 +257,10 @@ function M.get(config)
 
 		-- NvimTree
 		NvimTreeFileDirty = { fg = p.color200 },
-		NvimTreeFileNew = { fg = p.color200 },
+		NvimTreeFileNew = { fg = p.gold },
 		NvimTreeFileRenamed = { fg = p.color200 },
 		NvimTreeFileStaged = { fg = p.seafoam },
-		NvimTreeFolderIcon = { fg = p.color400 },
+		NvimTreeFolderIcon = { fg = p.crimson },
 		NvimTreeFolderName = { fg = p.color300 },
 		NvimTreeIndentMarker = { fg = p.color600 },
 		NvimTreeGitDeleted = { fg = p.rust },
@@ -278,7 +278,7 @@ function M.get(config)
 		NvimTreeRootFolder = { fg = p.color100 },
 		NvimTreeSpecialFile = { link = "NvimTreeNormal" },
 		NvimTreeWindowPicker = { fg = p.color100, bg = p.color600 },
-		WinSeparator = { fg = p.color600, bg = p.color800 },
+		WinSeparator = { fg = p.color500, bg = p.color800 },
 
 		-- Nvim Cmp
 		CmpItemAbbr = { fg = p.color200 },
