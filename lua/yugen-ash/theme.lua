@@ -230,8 +230,12 @@ function M.get(config)
 		-- svelte
 		["@tag.attribute.svelte"] = { link = "keyword" },
 		["@none.svelte"] = { fg = p.primary },
-		["@tag.svelte"] = { link = "variable" },
+		["@tag.svelte"] = { fg = p.color100 },
 		["@keyword.repeat.svelte"] = { link = "Boolean" },
+
+		-- css
+		["@keyword.operator.css"] = { link = "Boolean" },
+		["@function.css"] = { p.crimson },
 
 		-- json
 		["@property.jsonc"] = { fg = p.violet },
