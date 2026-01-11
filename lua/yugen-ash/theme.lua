@@ -229,9 +229,9 @@ function M.get(config)
 		["@label.javascript"] = { fg = p.ember },
 
 		-- svelte
-		["@tag.attribute.svelte"] = { link = "keyword" },
+		["@tag.attribute.svelte"] = { fg = p.ember },
 		["@none.svelte"] = { fg = p.primary },
-		["@tag.svelte"] = { fg = p.pine },
+		["@tag.svelte"] = { fg = p.moss },
 		["@keyword.repeat.svelte"] = { link = "Boolean" },
 
 		-- css
