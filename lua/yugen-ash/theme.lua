@@ -226,11 +226,12 @@ function M.get(config)
 		["@keyword.operator.javascript"] = { fg = p.tide },
 		["@keyword.type.javascript"] = { link = "Keyword" },
 		["@constant.builtin.javascript"] = { fg = p.violet },
+		["@label.javascript"] = { fg = p.ember },
 
 		-- svelte
 		["@tag.attribute.svelte"] = { link = "keyword" },
 		["@none.svelte"] = { fg = p.primary },
-		["@tag.svelte"] = { fg = p.color100 },
+		["@tag.svelte"] = { fg = p.pine },
 		["@keyword.repeat.svelte"] = { link = "Boolean" },
 
 		-- css
