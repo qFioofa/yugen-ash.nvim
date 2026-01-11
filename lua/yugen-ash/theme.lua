@@ -225,9 +225,13 @@ function M.get(config)
 		["@variable.builtin.javascript"] = { fg = p.violet },
 		["@keyword.operator.javascript"] = { fg = p.tide },
 		["@keyword.type.javascript"] = { link = "Keyword" },
+		["@constant.builtin.javascript"] = { fg = p.violet },
 
 		-- svelte
 		["@tag.attribute.svelte"] = { link = "keyword" },
+		["@none.svelte"] = { fg = p.primary },
+		["@tag.svelte"] = { link = "variable" },
+		["@keyword.repeat.svelte"] = { link = "Boolean" },
 
 		-- json
 		["@property.jsonc"] = { fg = p.violet },
@@ -240,7 +244,7 @@ function M.get(config)
 
 		-- vim.lsp.buf.document_highlight()
 		LspReferenceText = { bg = p.color800 },
-		LspReferenceRead = { bg = p.color800 },
+		LspReferenceRead = { bg = p.color400 },
 		LspReferenceWrite = { bg = p.color8000 },
 
 		-- lsp-highlight-codelens
@@ -256,7 +260,7 @@ function M.get(config)
 		SignDelete = { link = "GitSignsDelete" },
 
 		-- NvimTree
-		NvimTreeFileDirty = { fg = p.color200 },
+		NvimTreeFileDirty = { fg = p.primary },
 		NvimTreeFileNew = { fg = p.gold },
 		NvimTreeFileRenamed = { fg = p.color200 },
 		NvimTreeFileStaged = { fg = p.seafoam },
