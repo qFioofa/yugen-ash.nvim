@@ -51,7 +51,7 @@ function M.get(config)
 		ModeMsg = { fg = p.color200 },
 		MoreMsg = { fg = p.color200 },
 		NonText = { fg = p.color500 },
-		Normal = { fg = p.color400, bg = p.color700 },
+		Normal = { fg = p.color500, bg = p.color700 },
 		NormalFloat = { fg = p.color200, bg = styles.float_background },
 		NormalNC = { fg = p.color200, bg = styles.nc_background },
 		NvimInternalError = { fg = p.error, bg = p.color700 },
@@ -220,6 +220,9 @@ function M.get(config)
 		typescriptParenExp = { fg = p.color200 },
 		typescriptObjectType = { fg = p.color200 },
 		["@keyword.operator.instanceof"] = { link = "Operator" },
+
+		-- cpp
+		["@keyword.type.cpp"] = { link = "keyword" },
 
 		-- javascript
 		["@variable.builtin.javascript"] = { fg = p.violet },
