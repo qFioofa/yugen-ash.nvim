@@ -364,7 +364,7 @@ function M.get(config)
 		DefinitionSearch = { link = "Search" },
 		-- hover
 		HoverNormal = { link = "SagaNormal" },
-		HoverBorder = { link = "SagaBorder" },
+		HoverBorder = { link = p.crimson },
 		-- rename
 		RenameBorder = { link = "SagaBorder" },
 		RenameNormal = { fg = p.color200, p.background2 },
