@@ -4,9 +4,19 @@ A dark theme for nvim.
 
 ## Showcase
 
-[]()
+<table>
+  <tr>
+    <td align="center"><img src="./images/lua.png" /></td>
+    <td align="center"><img src="./images/svelte.png" /></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="./images/bash.png" /></td>
+    <td align="center"><img src="./images/elixir.png" /></td>
+  </tr>
+</table>
 
 # Palette
+
 ```lua
 placeholder = "#303030"
 color100 = "#fafafa"
@@ -48,7 +58,6 @@ rust = "#bc735c"
 frost = "#96a8ad"
 ```
 
-
 ## Installation
 
 [lazy.nvim](https://github.com/folke/lazy.nvim):
@@ -74,7 +83,6 @@ Fast integration
 }
 ```
 
-
 [packer.nvim](https://github.com/wbthomason/packer.nvim):
 
 ```lua
@@ -86,7 +94,6 @@ use { "qfioofa/yugen-ash.nvim" }
 ```lua
 vim.cmd("colorscheme yugen-ash")
 ```
-
 
 # Credits
 

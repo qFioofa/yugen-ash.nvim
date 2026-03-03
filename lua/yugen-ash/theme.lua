@@ -52,8 +52,8 @@ function M.get(config)
 		MoreMsg = { fg = p.color200 },
 		NonText = { fg = p.color500 },
 		Normal = { fg = p.color300, bg = p.color700 },
-		NormalFloat = { fg = p.color200, bg = styles.float_background },
-		NormalNC = { fg = p.color200, bg = styles.nc_background },
+		NormalFloat = { fg = p.color200, bg = p.color700 },
+		NormalNC = { fg = p.color200, bg = p.color700 },
 		NvimInternalError = { fg = p.error, bg = p.color700 },
 		Pmenu = { fg = p.color200, bg = p.color700 },
 		PmenuSbar = { bg = p.colo700 },
@@ -291,7 +291,7 @@ function M.get(config)
 		NvimTreeRootFolder = { fg = p.color100 },
 		NvimTreeSpecialFile = { link = "NvimTreeNormal" },
 		NvimTreeWindowPicker = { fg = p.color100, bg = p.color600 },
-		WinSeparator = { fg = p.color500, bg = p.color800 },
+		WinSeparator = { fg = p.color600, bg = p.color700 },
 
 		-- Nvim Cmp
 		CmpItemAbbr = { fg = p.color200 },
