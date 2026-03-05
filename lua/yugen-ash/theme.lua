@@ -250,6 +250,8 @@ function M.get(config)
 		-- lua
 		luaTSConstructor = { fg = p.color200 },
 		["@keyword.operator.lua"] = { link = "Operator" },
+		["@constant.builtin.lua"] = { link = "Special" },
+		["@label.lua"] = { link = "Special" },
 
 		-- vim.lsp.buf.document_highlight()
 		LspReferenceText = { bg = p.color800 },
