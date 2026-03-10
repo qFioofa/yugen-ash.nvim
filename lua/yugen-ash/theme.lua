@@ -155,7 +155,7 @@ function M.get(config)
 		["@boolean"] = { link = "Boolean" },
 		["@comment"] = { link = "Comment" },
 		["@variable.builtin"] = { fg = p.color300 },
-		["@constant.builtin"] = { fg = p.color300 },
+		["@constant.builtin"] = { fg = p.violet },
 		["@constant.falsy"] = { fg = p.primary },
 		["@constant"] = { link = " Constant" },
 		["@constructor"] = { link = "Type" },
@@ -194,7 +194,7 @@ function M.get(config)
 		["@text"] = { fg = p.color200 },
 		["@title"] = { fg = groups.headings.h1, style = "bold" },
 		["@type"] = { link = "Type" },
-		["@type.builtin"] = { link = "Type" },
+		["@type.builtin"] = { fg = p.amber },
 		["@type.definition"] = { link = "Type" },
 		TSURI = { fg = groups.link },
 
@@ -309,14 +309,14 @@ function M.get(config)
 		CmpItemKindVariable = { fg = p.primary },
 
 		-- Noice
-		["NoiceMini"] = { bg = "#1d1d1d", fg = "#1d1d1d" },
+		["NoiceMini"] = { bg = p.color200, fg = p.color200 },
 		["NoiceCmdlineIcon"] = { fg = "#d1d1d1" },
 		["NoiceCmdlineIconSearch"] = { fg = p.primary },
-		["NoiceCmdlinePopup"] = { bg = "#1d1d1d" },
+		["NoiceCmdlinePopup"] = { bg = p.color200 },
 		["NoiceCmdlinePopupBorder"] = { fg = p.primary },
 
 		-- Notify highlights
-		["NotifyBackground"] = { bg = "#1d1d1d" },
+		["NotifyBackground"] = { bg = p.color200 },
 		["NotifyBorder"] = { fg = p.primary },
 		["NotifyTitle"] = { fg = p.primary, bold = true },
 
