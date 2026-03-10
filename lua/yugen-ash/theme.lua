@@ -162,7 +162,7 @@ function M.get(config)
 		["field"] = { fg = p.color200 },
 
 		["@function"] = { link = "Function" },
-		["@function.builtin"] = { fg = p.color300 },
+		["@function.builtin"] = { link = "Special" },
 		["@function.call"] = { link = "keyword" },
 		["@function_declaration"] = { link = "keyword" },
 		TSInclude = { fg = p.color200 },
@@ -174,7 +174,7 @@ function M.get(config)
 		["@keyword.type"] = { link = "Type" },
 		["@keyword.coroutine"] = { fg = p.seafoam },
 		["@keyword.conditional.ternary"] = { link = "boolean" },
-
+		["@keyword.import"] = { p.violet },
 		["@conditional"] = { fg = p.tide },
 
 		["@class"] = { fg = p.crimson },
