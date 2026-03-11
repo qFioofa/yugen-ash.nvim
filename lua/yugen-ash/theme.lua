@@ -170,7 +170,7 @@ function M.get(config)
 		["@keyword"] = { link = "Keyword" },
 		["@keyword.return"] = { link = "Keyword" },
 		["@keyword.function"] = { fg = p.crimson },
-		["@keyword.operator"] = { fg = p.color400 },
+		["@keyword.operator"] = { link = "Operator" },
 		["@keyword.type"] = { link = "Type" },
 		["@keyword.coroutine"] = { fg = p.seafoam },
 		["@keyword.conditional.ternary"] = { link = "boolean" },
