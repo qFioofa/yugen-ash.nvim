@@ -178,7 +178,7 @@ function M.get(config)
 		["@conditional"] = { fg = p.tide },
 
 		["@class"] = { fg = p.crimson },
-		["@label"] = { fg = p.color500 },
+		["@label"] = { fg = p.seafoam },
 		["@method"] = { fg = p.gold },
 		["@operator"] = { fg = p.tide },
 		["@parameter"] = { fg = p.color200 },
