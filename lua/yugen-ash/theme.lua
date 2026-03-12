@@ -171,6 +171,7 @@ function M.get(config)
 		["@keyword.return"] = { link = "Keyword" },
 		["@keyword.function"] = { fg = p.crimson },
 		["@keyword.operator"] = { link = "Operator" },
+		["@keyword.modifier"] = { fg = p.seafoam },
 		["@keyword.type"] = { link = "Type" },
 		["@keyword.coroutine"] = { fg = p.seafoam },
 		["@keyword.conditional.ternary"] = { link = "boolean" },
