@@ -1,422 +1,193 @@
--- Adapted from yugen.nvim
--- Source: https://github.com/bettervim/yugen.nvim
--- Original Copyright (c) 2023 bettervim
--- MIT Licensed
-
--- Modified by qfioofa:
--- - Removed color groups
--- - Replaced colors
+-- Theme generator with variant support
 
 local M = {}
 
 function M.get(config)
-	local p = require("yugen-ash.palette")
-
+	local variant = config.variant or "main"
+	local p = require("yugen-ash.palette").get(variant)
 	local theme = {}
 	local groups = config.groups or {}
 	local styles = {
-		italic = (config.disable_italics and p.none) or "italic",
-		vert_split = (config.bold_vert_split and groups.border) or p.none,
-		background = (config.transparent and p.none) or groups.background,
-		float_background = (config.transparent_statusline and p.none) or groups.panel,
+		italic = config.disable_italics and p.none or "italic",
+		vert_split = config.bold_vert_split and groups.border or p.none,
+		background = config.transparent and p.none or groups.background,
+		float_background = config.transparent_statusline and p.none or groups.panel,
 	}
 	styles.nc_background = (config.dim_nc_background and not config.transparent and groups.panel) or styles.background
 
-	theme = {
-		LineNr = { fg = p.color400 },
-		CursorLine = { fg = p.rust, bg = "none" },
-		CursorLineNr = { fg = p.crimson },
+	-- UI
+	theme.LineNr = { fg = p.color400 }
+	theme.CursorLine = { bg = p.none, fg = p.rust }
+	theme.CursorLineNr = { fg = p.crimson }
+	theme.CursorColumn = { bg = p.color800 }
+	theme.Cursor = { fg = p.color200, bg = p.placeholder }
+	theme.ColorColumn = { bg = p.color600 }
+	theme.Conceal = { fg = p.color200, bg = p.none }
+	theme.DiffAdd = { bg = p.color700 }
+	theme.DiffChange = { fg = p.color200, bg = p.color700 }
+	theme.DiffDelete = { bg = p.color700 }
+	theme.DiffText = { bg = p.color700 }
+	theme.Directory = { fg = p.color300, bg = p.none }
+	theme.ErrorMsg = { fg = p.error, style = "bold" }
+	theme.FloatBorder = { fg = groups.border }
+	theme.FloatTitle = { fg = p.color200 }
+	theme.FoldColumn = { fg = p.color200 }
+	theme.Folded = { fg = p.color200, bg = groups.panel }
+	theme.IncSearch = { fg = p.color200, bg = p.color600 }
+	theme.MatchParen = { fg = p.color200, bg = p.color700 }
+	theme.ModeMsg = { fg = p.color200 }
+	theme.MoreMsg = { fg = p.color200 }
+	theme.NonText = { fg = p.color500 }
+	theme.Normal = { fg = p.color300, bg = p.color700 }
+	theme.NormalFloat = { fg = p.color200, bg = p.color700 }
+	theme.NormalNC = { fg = p.color200, bg = p.color700 }
+	theme.Pmenu = { fg = p.color200, bg = p.color700 }
+	theme.PmenuSbar = { bg = p.color700 }
+	theme.PmenuSel = { fg = p.color200, bg = p.color400 }
+	theme.PmenuThumb = { bg = p.color600 }
+	theme.Question = { fg = p.warning }
+	theme.Search = { fg = p.color200, bg = p.color600 }
+	theme.SignColumn = { fg = p.color200, bg = p.none }
+	theme.SpecialKey = { fg = p.color200 }
+	theme.SpellBad = { sp = p.error, style = "undercurl" }
+	theme.SpellCap = { sp = p.color300, style = "undercurl" }
+	theme.SpellLocal = { sp = p.warning, style = "undercurl" }
+	theme.SpellRare = { sp = p.color300, style = "undercurl" }
+	theme.StatusLine = { fg = p.color200, bg = styles.float_background }
+	theme.StatusLineNC = { fg = p.color200, bg = styles.background }
+	theme.TabLine = { fg = p.color200 }
+	theme.TabLineFill = { bg = p.color800 }
+	theme.TabLineSel = { fg = p.color200, bg = p.color800 }
+	theme.Title = { fg = p.color200 }
+	theme.VertSplit = { fg = groups.border }
+	theme.Visual = { fg = p.color200, bg = p.color600 }
+	theme.WarningMsg = { fg = p.warning }
+	theme.Whitespace = { fg = p.color600 }
+	theme.WildMenu = { link = "IncSearch" }
 
-		Conceal = { fg = p.color200, bg = p.none },
-		CurSearch = { link = "IncSearch" },
-		Cursor = { fg = p.color200, bg = p.placeholder },
-		CursorColumn = { bg = p.color800 },
-		DarkenedPanel = { bg = groups.panel },
-		DarkenedStatusline = { bg = groups.panel },
-		DiffAdd = { bg = p.color700 },
-		DiffChange = { fg = p.color200, bg = p.color700 },
-		DiffDelete = { bg = p.color700 },
-		DiffText = { bg = p.color700 },
-		diffAdded = { link = "DiffAdd" },
-		diffChanged = { link = "DiffChange" },
-		diffRemoved = { link = "DiffDelete" },
-		Directory = { fg = p.color300, bg = p.none },
-		ErrorMsg = { fg = p.error, style = "bold" },
-		FloatBorder = { fg = groups.border },
-		FloatTitle = { fg = p.color200 },
-		FoldColumn = { fg = p.color200 },
-		Folded = { fg = p.color200, bg = groups.panel },
-		IncSearch = { fg = p.color200, bg = p.color600 },
-		MatchParen = { fg = p.color200, bg = p.color700 },
-		ModeMsg = { fg = p.color200 },
-		MoreMsg = { fg = p.color200 },
-		NonText = { fg = p.color500 },
-		Normal = { fg = p.color300, bg = p.color700 },
-		NormalFloat = { fg = p.color200, bg = p.color700 },
-		NormalNC = { fg = p.color200, bg = p.color700 },
-		NvimInternalError = { fg = p.error, bg = p.color700 },
-		Pmenu = { fg = p.color200, bg = p.color700 },
-		PmenuSbar = { bg = p.colo700 },
-		PmenuSel = { fg = p.color200, bg = p.color400 },
-		PmenuThumb = { bg = p.color600 },
-		Question = { fg = p.warning },
-		RedrawDebugClear = { fg = p.color100, bg = p.warning },
-		RedrawDebugComposed = { fg = p.color100, bg = p.placeholder },
-		RedrawDebugRecompose = { fg = p.error, bg = p.color700 },
-		Search = { fg = p.color200, bg = p.color600 },
-		SpecialKey = { fg = p.color200 },
-		SpellBad = { sp = p.error, style = "undercurl" },
-		SpellCap = { sp = p.blue1, style = "undercurl" },
-		SpellLocal = { sp = p.warning, style = "undercurl" },
-		SpellRare = { sp = p.blue1, style = "undercurl" },
-		SignColumn = { fg = p.color200, bg = p.none },
-		StatusLine = { fg = p.color200, bg = styles.float_background },
-		StatusLineNC = { fg = p.color200, bg = styles.background },
-		StatusLineTerm = { link = "StatusLine" },
-		StatusLineTermNC = { link = "StatusLineNC" },
-		TabLine = { fg = p.color200 },
-		TabLineFill = { bg = p.color800 },
-		TabLineSel = { fg = p.color200, bg = p.color800 },
-		Title = { fg = p.color200 },
-		VertSplit = { fg = groups.border },
-		Visual = { fg = p.color200, bg = p.color600 },
-		WarningMsg = { fg = p.warning },
-		Whitespace = { fg = p.color600 },
-		WildMenu = { link = "IncSearch" },
+	-- Syntax
+	theme.Constant = { fg = p.violet }
+	theme.String = { fg = p.sage }
+	theme.Character = { fg = p.sage }
+	theme.Number = { fg = p.violet }
+	theme.Boolean = { fg = p.tide }
+	theme.Float = { fg = p.violet }
+	theme.Identifier = { fg = p.color200 }
+	theme.Function = { fg = p.primary }
+	theme.Statement = { fg = p.color200 }
+	theme.Conditional = { fg = p.tide }
+	theme.Repeat = { fg = p.tide }
+	theme.Label = { fg = p.seafoam }
+	theme.Operator = { fg = p.frost }
+	theme.Keyword = { fg = p.crimson }
+	theme.Exception = { fg = p.tide }
+	theme.PreProc = { fg = p.color200 }
+	theme.Include = { fg = p.primary }
+	theme.Type = { fg = p.gold }
+	theme.Special = { fg = p.rust }
+	theme.Tag = { fg = p.primary }
+	theme.Delimiter = { fg = p.color200 }
+	theme.SpecialComment = { fg = p.color300 }
+	theme.Comment = { fg = p.color400 }
+	theme.Underlined = { style = "underline" }
+	theme.Bold = { style = "bold" }
+	theme.Italic = { style = "italic" }
 
-		Constant = { fg = p.violet },
-		String = { fg = p.sage },
-		Character = { fg = p.sage },
-		Number = { fg = p.violet },
-		Boolean = { fg = p.tide },
-		Float = { fg = p.violet },
+	-- Diagnostics
+	theme.DiagnosticError = { fg = groups.error }
+	theme.DiagnosticWarn = { fg = groups.warn }
+	theme.DiagnosticInfo = { fg = groups.info }
+	theme.DiagnosticHint = { fg = groups.hint }
+	theme.DiagnosticUnderlineError = { sp = groups.error, style = "undercurl" }
+	theme.DiagnosticUnderlineWarn = { sp = groups.warn, style = "undercurl" }
+	theme.DiagnosticUnderlineInfo = { sp = groups.info, style = "undercurl" }
+	theme.DiagnosticUnderlineHint = { sp = groups.hint, style = "undercurl" }
+	theme.DiagnosticVirtualTextError = { fg = groups.error }
+	theme.DiagnosticVirtualTextWarn = { fg = groups.warn }
+	theme.DiagnosticVirtualTextInfo = { fg = groups.info }
+	theme.DiagnosticVirtualTextHint = { fg = groups.hint }
+	theme.LspInlayHint = { fg = p.color400, style = "italic" }
 
-		Identifier = { fg = p.color200 },
-		Function = { fg = p.primary },
+	-- Treesitter
+	theme["@variable"] = { fg = p.color200 }
+	theme["@variable.builtin"] = { fg = p.color300 }
+	theme["@constant"] = { link = "Constant" }
+	theme["@constant.builtin"] = { fg = p.violet }
+	theme["@function"] = { link = "Function" }
+	theme["@function.call"] = { link = "Function" }
+	theme["@keyword"] = { link = "Keyword" }
+	theme["@keyword.function"] = { fg = p.crimson }
+	theme["@keyword.import"] = { fg = p.violet }
+	theme["@keyword.operator"] = { link = "Operator" }
+	theme["@keyword.return"] = { link = "Keyword" }
+	theme["@parameter"] = { fg = p.color200 }
+	theme["@method"] = { fg = p.gold }
+	theme["@operator"] = { fg = p.tide }
+	theme["@punctuation.delimiter"] = { fg = p.color400 }
+	theme["@punctuation.bracket"] = { fg = p.color400 }
+	theme["@string"] = { link = "String" }
+	theme["@tag"] = { fg = p.sage }
+	theme["@tag.attribute"] = { fg = p.gold, style = styles.italic }
+	theme["@text"] = { fg = p.color200 }
+	theme["@text.title"] = { fg = p.primary, style = "bold" }
+	theme["@type"] = { link = "Type" }
+	theme["@type.builtin"] = { fg = p.amber }
+	theme["@label"] = { fg = p.seafoam }
+	theme["@conditional"] = { fg = p.tide }
+	theme["@repeat"] = { fg = p.tide }
 
-		Statement = { fg = p.color200 },
-		Conditional = { fg = p.color200 },
-		Repeat = { fg = p.color200 },
-		Label = { fg = p.color200 },
-		Operator = { fg = p.frost },
-		Keyword = { fg = p.crimson },
-		Exception = { fg = p.color200 },
+	-- LSP
+	theme.LspReferenceText = { bg = p.color800 }
+	theme.LspReferenceRead = { bg = p.color400 }
+	theme.LspReferenceWrite = { bg = p.color800 }
+	theme.LspCodeLens = { fg = p.color400 }
+	theme.LspSignatureActiveParameter = { bg = p.placeholder, style = "bold" }
 
-		PreProc = { fg = p.color200 },
-		Include = { fg = p.primary },
+	-- Git signs
+	theme.GitSignsAdd = { fg = groups.git_add }
+	theme.GitSignsChange = { fg = groups.git_change }
+	theme.GitSignsDelete = { fg = groups.git_delete }
+	theme.GitSignsCurrentLineBlame = { fg = p.color400 }
 
-		Type = { fg = p.gold },
+	-- NvimTree
+	theme.NvimTreeFolderIcon = { fg = p.crimson }
+	theme.NvimTreeFolderName = { fg = p.color300 }
+	theme.NvimTreeNormal = { fg = p.color200 }
+	theme.NvimTreeRootFolder = { fg = p.color100, style = "bold" }
+	theme.NvimTreeGitNew = { fg = p.sage }
+	theme.NvimTreeGitDirty = { fg = p.color200 }
+	theme.NvimTreeGitStaged = { fg = p.seafoam }
+	theme.WinSeparator = { fg = p.color600, bg = p.color700 }
 
-		Special = { fg = p.rust },
-		Tag = { fg = p.primary },
-		Delimiter = { fg = p.color200 },
-		SpecialComment = { fg = p.color300 },
+	-- Cmp
+	theme.CmpItemAbbr = { fg = p.color200 }
+	theme.CmpItemAbbrMatch = { fg = p.color300, style = "bold" }
+	theme.CmpItemKind = { fg = p.primary }
+	theme.CmpItemMenu = { fg = p.color400 }
 
-		Comment = { fg = p.color400 },
+	-- Telescope
+	theme.TelescopeNormal = { fg = p.color200, bg = p.color700 }
+	theme.TelescopeSelection = { fg = p.color200, bg = p.color600 }
+	theme.TelescopeBorder = { fg = p.color400, bg = p.color700 }
+	theme.TelescopePromptNormal = { fg = p.color200, bg = p.color700 }
+	theme.TelescopePreviewTitle = { fg = p.color100, bg = p.color700 }
 
-		Underlined = { style = "underline" },
-		Bold = { style = "bold" },
-		Italic = { style = "italic" },
-		qfLineNr = { fg = p.color200 },
-		qfFileName = { fg = p.color200 },
-		debugPC = { bg = p.color800 },
-		debugBreakpoint = { bg = p.placeholder, fg = p.color200 },
-		DiagnosticError = { fg = groups.error },
-		DiagnosticHint = { fg = groups.hint },
-		DiagnosticInfo = { fg = groups.info },
-		DiagnosticWarn = { fg = groups.warn },
-		DiagnosticDefaultError = { fg = groups.error },
-		DiagnosticDefaultHint = { fg = groups.hint },
-		DiagnosticDefaultInfo = { fg = groups.info },
-		DiagnosticDefaultWarn = { fg = groups.warn },
-		DiagnosticFloatingError = { fg = groups.error },
-		DiagnosticFloatingHint = { fg = groups.hint },
-		DiagnosticFloatingInfo = { fg = groups.info },
-		DiagnosticFloatingWarn = { fg = groups.warn },
-		DiagnosticSignError = { fg = groups.error },
-		DiagnosticSignHint = { fg = groups.hint },
-		DiagnosticSignInfo = { fg = groups.info },
-		DiagnosticSignWarn = { fg = groups.warn },
-		DiagnosticStatusLineError = { fg = groups.error, bg = groups.panel },
-		DiagnosticStatusLineHint = { fg = groups.hint, bg = groups.panel },
-		DiagnosticStatusLineInfo = { fg = groups.info, bg = groups.panel },
-		DiagnosticStatusLineWarn = { fg = groups.warn, bg = groups.panel },
-		DiagnosticUnderlineError = { sp = groups.error, style = "undercurl" },
-		DiagnosticUnderlineHint = { sp = groups.hint, style = "undercurl" },
-		DiagnosticUnderlineInfo = { sp = groups.info, style = "undercurl" },
-		DiagnosticUnderlineWarn = { sp = groups.warn, style = "undercurl" },
-		DiagnosticVirtualTextError = { fg = groups.error },
-		DiagnosticVirtualTextHint = { fg = groups.hint },
-		DiagnosticVirtualTextInfo = { fg = groups.info },
-		DiagnosticVirtualTextWarn = { fg = groups.warn },
-
-		-- Treesitter
-		["@variable"] = { fg = p.color200 },
-		["@boolean"] = { link = "Boolean" },
-		["@comment"] = { link = "Comment" },
-		["@variable.builtin"] = { fg = p.color300 },
-		["@constant.builtin"] = { fg = p.violet },
-		["@constant.falsy"] = { fg = p.primary },
-		["@constant"] = { link = " Constant" },
-		["@constructor"] = { link = "Type" },
-		["field"] = { fg = p.color200 },
-
-		["@function"] = { link = "Function" },
-		["@function.builtin"] = { link = "Special" },
-		["@function.call"] = { link = "keyword" },
-		["@function_declaration"] = { link = "keyword" },
-		TSInclude = { fg = p.color200 },
-
-		["@keyword"] = { link = "Keyword" },
-		["@keyword.return"] = { link = "Keyword" },
-		["@keyword.function"] = { fg = p.crimson },
-		["@keyword.operator"] = { link = "Operator" },
-		["@keyword.modifier"] = { fg = p.seafoam, priority = 1000 },
-		["@keyword.type"] = { link = "Type" },
-		["@keyword.coroutine"] = { fg = p.seafoam },
-		["@keyword.conditional.ternary"] = { link = "boolean" },
-		["@keyword.import"] = { p.violet },
-		["@conditional"] = { fg = p.tide },
-
-		["@class"] = { fg = p.crimson },
-		["@label"] = { fg = p.seafoam },
-		["@method"] = { fg = p.gold },
-		["@operator"] = { fg = p.tide },
-		["@parameter"] = { fg = p.color200 },
-		["@property"] = { fg = p.color300 },
-		["@punctuation.delimiter"] = { fg = groups.punctuation },
-		["@punctuation.special"] = { fg = groups.punctuation },
-		["@punctuation.bracket"] = { fg = p.color400 },
-		["@string"] = { link = "String" },
-		["@string.escape"] = { link = "String" },
-		["@tag"] = { fg = p.sage },
-		["@tag.delimiter"] = { fg = p.color400 },
-		["@tag.attribute"] = { fg = p.gold, style = styles.italic },
-		["@text"] = { fg = p.color200 },
-		["@title"] = { fg = groups.headings.h1, style = "bold" },
-		["@type"] = { link = "Type" },
-		["@type.builtin"] = { fg = p.amber },
-		["@type.definition"] = { link = "Type" },
-		TSURI = { fg = groups.link },
-
-		-- tsx
-		["@keyword.export.tsx"] = { fg = p.color400 },
-		["@keyword.import.tsx"] = { fg = p.color400 },
-		["@import.identifier.tsx"] = { fg = p.color300 },
-
-		-- typescript
-		["@keyword.export.typescript"] = { fg = p.color400 },
-		["@keyword.import.typescript"] = { fg = p.color400 },
-		["@import.identifier.typescript"] = { fg = p.color300 },
-		typescriptVariable = { fg = p.color200 },
-		typescriptExport = { fg = p.color200 },
-		typescriptDefault = { fg = p.color200 },
-		typescriptConstraint = { fg = p.color200 },
-		typescriptBlock = { fg = p.color200 },
-		typescriptIdentifierName = { fg = p.color200 },
-		typescriptTSInclude = { fg = p.color200 },
-		typescriptCastKeyword = { fg = p.color200 },
-		typescriptEnum = { fg = p.color200 },
-		typescriptTypeCast = { fg = p.color200 },
-		typescriptParenExp = { fg = p.color200 },
-		typescriptObjectType = { fg = p.color200 },
-		["@keyword.operator.instanceof"] = { link = "Operator" },
-
-		-- cpp
-		["@keyword.type.cpp"] = { link = "keyword" },
-		["@label.cpp"] = { fg = p.color200 },
-
-		-- javascript
-		["@variable.builtin.javascript"] = { fg = p.violet },
-		["@keyword.operator.javascript"] = { fg = p.tide },
-		["@keyword.type.javascript"] = { link = "Keyword" },
-		["@constant.builtin.javascript"] = { fg = p.violet },
-		["@label.javascript"] = { fg = p.ember },
-
-		-- svelte
-		["@tag.attribute.svelte"] = { fg = p.ember },
-		["@none.svelte"] = { fg = p.primary },
-		["@tag.svelte"] = { fg = p.moss },
-		["@keyword.repeat.svelte"] = { link = "Boolean" },
-
-		-- css
-		["@keyword.operator.css"] = { link = "Boolean" },
-		["@function.css"] = { p.crimson },
-
-		-- json
-		["@property.jsonc"] = { fg = p.violet },
-		["@string.jsonc"] = { link = "String" },
-		["@constant.builtin.jsonc"] = { fg = p.gold },
-
-		-- lua
-		luaTSConstructor = { fg = p.color200 },
-		["@keyword.operator.lua"] = { link = "Operator" },
-		["@constant.builtin.lua"] = { link = "Special" },
-		["@label.lua"] = { link = "Special" },
-
-		-- vim.lsp.buf.document_highlight()
-		LspReferenceText = { bg = p.color800 },
-		LspReferenceRead = { bg = p.color400 },
-		LspReferenceWrite = { bg = p.color8000 },
-
-		-- lsp-highlight-codelens
-		LspCodeLens = { fg = p.color200 },
-		LspCodeLensSeparator = { fg = p.color200 },
-
-		-- lewis6991/gitsigns.nvim
-		GitSignsAdd = { fg = groups.git_add },
-		GitSignsChange = { fg = groups.git_change },
-		GitSignsDelete = { fg = groups.git_delete },
-		SignAdd = { link = "GitSignsAdd" },
-		SignChange = { link = "GitSignsChange" },
-		SignDelete = { link = "GitSignsDelete" },
-
-		-- NvimTree
-		NvimTreeFileDirty = { fg = p.primary },
-		NvimTreeFileNew = { fg = p.gold },
-		NvimTreeFileRenamed = { fg = p.color200 },
-		NvimTreeFileStaged = { fg = p.seafoam },
-		NvimTreeFolderIcon = { fg = p.crimson },
-		NvimTreeFolderName = { fg = p.color300 },
-		NvimTreeIndentMarker = { fg = p.color600 },
-		NvimTreeGitDeleted = { fg = p.rust },
-		NvimTreeGitDirty = { fg = p.color200 },
-		NvimTreeGitIgnored = { fg = groups.git_ignore, style = "italic" },
-		NvimTreeGitMerge = { fg = groups.git_merge },
-		NvimTreeGitNew = { fg = p.sage },
-		NvimTreeGitRenamed = { fg = groups.git_rename },
-		NvimTreeGitStaged = { fg = groups.git_stage },
-		NvimTreeImageFile = { fg = p.color100 },
-		NvimTreeExecFile = { fg = p.color100 },
-		NvimTreeNormal = { fg = p.color200 },
-		NvimTreeOpenedFile = { fg = p.color400, bg = "none" },
-		NvimTreeOpenedFolderName = { link = "NvimTreeFolderName" },
-		NvimTreeRootFolder = { fg = p.color100 },
-		NvimTreeSpecialFile = { link = "NvimTreeNormal" },
-		NvimTreeWindowPicker = { fg = p.color100, bg = p.color600 },
-		WinSeparator = { fg = p.color600, bg = p.color700 },
-
-		-- Nvim Cmp
-		CmpItemAbbr = { fg = p.color200 },
-		CmpItemAbbrDeprecated = { fg = p.color700, style = "strikethrough" },
-		CmpItemAbbrMatch = { fg = p.color300 },
-		CmpItemAbbrMatchFuzzy = { fg = p.color100 },
-		CmpItemKind = { fg = p.primary },
-		CmpItemKindClass = { fg = p.primary },
-		CmpItemKindFunction = { fg = p.primary },
-		CmpItemKindInterface = { fg = p.primary },
-		CmpItemKindMethod = { fg = p.primary },
-		CmpItemKindSnippet = { fg = p.primary },
-		CmpItemKindVariable = { fg = p.primary },
-
-		-- Noice
-		["NoiceMini"] = { bg = p.color200, fg = p.color200 },
-		["NoiceCmdlineIcon"] = { fg = "#d1d1d1" },
-		["NoiceCmdlineIconSearch"] = { fg = p.primary },
-		["NoiceCmdlinePopup"] = { bg = p.color200 },
-		["NoiceCmdlinePopupBorder"] = { fg = p.primary },
-
-		-- Notify highlights
-		["NotifyBackground"] = { bg = p.color200 },
-		["NotifyBorder"] = { fg = p.primary },
-		["NotifyTitle"] = { fg = p.primary, bold = true },
-
-		-- ray-x/lsp_signature.nvim
-		LspSignatureActiveParameter = { bg = p.placeholder },
-
-		-- Markdown
-		RenderMarkdownCode = { bg = p.color700 },
-		-- Telescope
-		TelescopeMatching = { fg = p.primary },
-		TelescopeNormal = { fg = p.color200 },
-		TelescopeSelection = { fg = p.color200, bg = p.color700 },
-		TelescopeTitle = { fg = p.color200 },
-		TelescopeBorder = { fg = p.color600 },
-		TelescopePromptBorder = { fg = p.color700 },
-		TelescopePromptNormal = { fg = p.color100 },
-		TelescopePromptPrefix = { fg = p.color200 },
-		TelescopePreviewTitle = { fg = p.color100, bg = p.color700 },
-		TelescopePromptTitle = { fg = p.color100, bg = p.color700 },
-		TelescopeResultsDiffAdd = { fg = p.primary },
-		TelescopeResultsDiffChange = { fg = p.color600 },
-		TelescopeResultsDiffDelete = { fg = p.primary },
-
-		-- Dashboard
-		DashboardFooter = { fg = p.color400, bg = "none", bold = true },
-		BvDashboardKey = { fg = p.primary, bg = "none", bold = true },
-		BvDashboardItemIcon = { fg = p.color300 },
-		BvDashboardItemText = { fg = p.color300 },
-
-		-- code action
-		ActionPreviewNormal = { link = "SagaNormal" },
-		ActionPreviewBorder = { link = "SagaBorder" },
-		ActionPreviewTitle = { fg = p.color200, bg = p.placeholder },
-		CodeActionNormal = { link = "SagaNormal" },
-		CodeActionBorder = { link = "SagaBorder" },
-		CodeActionText = { fg = p.warning },
-		CodeActionNumber = { fg = p.color200 },
-		-- finder
-		FinderSelection = { fg = p.color200, bold = true },
-		FinderFileName = { fg = p.color200 },
-		FinderCount = { link = "Label" },
-		FinderIcon = { fg = p.warning },
-		FinderType = { fg = p.color200 },
-		-- definitionheading
-		DefinitionBorder = { link = "SagaBorder" },
-		DefinitionNormal = { link = "SagaNormal" },
-		DefinitionSearch = { link = "Search" },
-
-		-- hover
-		HoverNormal = { link = "SagaNormal" },
-		HoverBorder = { fg = p.crimson },
-
-		-- rename
-		RenameBorder = { link = "SagaBorder" },
-		RenameNormal = { fg = p.color200, p.background2 },
-		RenameMatch = { link = "Search" },
-		-- diagnostic
-		DiagnosticBorder = { link = "SagaBorder" },
-		DiagnosticSource = { fg = p.color200 },
-		DiagnosticNormal = { link = "SagaNormal" },
-		DiagnosticErrorBorder = { link = "DiagnosticError" },
-		DiagnosticWarnBorder = { link = "DiagnosticWarn" },
-		DiagnosticHintBorder = { link = "DiagnosticHint" },
-		DiagnosticInfoBorder = { link = "DiagnosticInfo" },
-		DiagnosticPos = { fg = p.color200 },
-		DiagnosticWord = { fg = p.color200 },
-		-- Call Hierachry
-		CallHierarchyNormal = { link = "SagaNormal" },
-		CallHierarchyBorder = { link = "SagaBorder" },
-		CallHierarchyIcon = { fg = p.color200 },
-		CallHierarchyTitle = { fg = p.color200 },
-		-- lightbulb
-		LspSagaLightBulb = { link = "DiagnosticSignHint" },
-		-- shadow
-		SagaShadow = { bg = p.placeholder },
-		-- Outline
-		OutlineIndent = { fg = p.color200 },
-		OutlinePreviewBorder = { link = "SagaNormal" },
-		OutlinePreviewNormal = { link = "SagaBorder" },
-		-- Float term
-		TerminalBorder = { link = "SagaBorder" },
-		TerminalNormal = { link = "SagaNormal" },
-	}
-
+	-- Terminal
 	vim.g.terminal_color_0 = p.color800
-	vim.g.terminal_color_8 = p.color300
 	vim.g.terminal_color_1 = p.primary
-	vim.g.terminal_color_9 = p.color300
-	vim.g.terminal_color_2 = p.color400
-	vim.g.terminal_color_10 = p.color500
+	vim.g.terminal_color_2 = p.success
 	vim.g.terminal_color_3 = p.warning
-	vim.g.terminal_color_11 = p.color300
-	vim.g.terminal_color_4 = p.color400
-	vim.g.terminal_color_12 = p.primary
-	vim.g.terminal_color_5 = p.primary
-	vim.g.terminal_color_13 = p.placeholder
-	vim.g.terminal_color_6 = p.color200
-	vim.g.terminal_color_14 = p.color200
+	vim.g.terminal_color_4 = p.violet
+	vim.g.terminal_color_5 = p.crimson
+	vim.g.terminal_color_6 = p.tide
 	vim.g.terminal_color_7 = p.color100
+	vim.g.terminal_color_8 = p.color300
+	vim.g.terminal_color_9 = p.error
+	vim.g.terminal_color_10 = p.success
+	vim.g.terminal_color_11 = p.warning
+	vim.g.terminal_color_12 = p.primary
+	vim.g.terminal_color_13 = p.coral
+	vim.g.terminal_color_14 = p.tide
 	vim.g.terminal_color_15 = p.color100
 
 	return theme

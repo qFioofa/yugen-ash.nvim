@@ -1,18 +1,9 @@
--- Adapted from yugen.nvim
--- Source: https://github.com/bettervim/yugen.nvim
--- Original Copyright (c) 2023 bettervim
--- MIT Licensed
-
--- Modified by qfioofa:
--- - Changed color palette
--- - Added new highlight groups
--- - Removed unused components
--- - Replaced colors
+-- Color palette with multiple theme variants
 
 local variants = {
+	-- Main theme (yugen-ash)
 	main = {
 		placeholder = "#303030",
-		-- Darks
 		color100 = "#FAFAFA",
 		color200 = "#D4D4D4",
 		color300 = "#A9A9A9",
@@ -21,27 +12,10 @@ local variants = {
 		color600 = "#303030",
 		color700 = "#151515",
 		color800 = "#000000",
-		-- Accents
 		primary = "#FFBE89",
 		success = "#7EAB8E",
 		warning = "#FFF2AF",
 		error = "#F57A7A",
-		dawn = "#FFD3B6",
-		moss = "#6A8A6A",
-		clay = "#A57C65",
-		amber = "#D4A76A",
-		slate = "#5D6D7E",
-		pine = "#3A5F4A",
-		coral = "#FF9E8B",
-		ash = "#7A7A7A",
-		ember = "#B35A3A",
-		mist = "#A8C4C4",
-		flint = "#5A6B7C",
-		bloom = "#C38B9E",
-		drift = "#B6C8D9",
-		umber = "#8A6A4D",
-		fjord = "#4A6A6A",
-		-- Code accents
 		violet = "#c678dd",
 		crimson = "#bf616a",
 		tide = "#79a0aa",
@@ -50,12 +24,105 @@ local variants = {
 		seafoam = "#8dd3c3",
 		rust = "#bc735c",
 		frost = "#96a8ad",
+		amber = "#D4A76A",
+		coral = "#FF9E8B",
+		moss = "#6A8A6A",
+		ember = "#B35A3A",
+		none = "none",
+	},
+	-- Rich theme (warmer, more contrast)
+	rich = {
+		placeholder = "#2a2a2a",
+		color100 = "#FFFFFF",
+		color200 = "#E5E5E5",
+		color300 = "#B0B0B0",
+		color400 = "#707070",
+		color500 = "#404040",
+		color600 = "#252525",
+		color700 = "#1a1a1a",
+		color800 = "#0a0a0a",
+		primary = "#FFB347",
+		success = "#88D498",
+		warning = "#FFE57C",
+		error = "#FF6B6B",
+		violet = "#BB86FC",
+		crimson = "#CF6679",
+		tide = "#64B5F6",
+		sage = "#81C784",
+		gold = "#FFB74D",
+		seafoam = "#4DB6AC",
+		rust = "#E57373",
+		frost = "#90CAF9",
+		amber = "#FFA726",
+		coral = "#FF8A65",
+		moss = "#66BB6A",
+		ember = "#F06292",
+		none = "none",
+	},
+	-- Muted theme (softer, less saturation)
+	muted = {
+		placeholder = "#353535",
+		color100 = "#F5F5F5",
+		color200 = "#CCCCCC",
+		color300 = "#999999",
+		color400 = "#666666",
+		color500 = "#444444",
+		color600 = "#333333",
+		color700 = "#181818",
+		color800 = "#050505",
+		primary = "#C9A66B",
+		success = "#7A9A7A",
+		warning = "#D4C47A",
+		error = "#B56B6B",
+		violet = "#9D7BB5",
+		crimson = "#A55A5A",
+		tide = "#5A8A9A",
+		sage = "#7A9A7A",
+		gold = "#B5954A",
+		seafoam = "#6A9A8A",
+		rust = "#9A5A4A",
+		frost = "#6A8A9A",
+		amber = "#B5955A",
+		coral = "#B57A6A",
+		moss = "#5A8A5A",
+		ember = "#9A5A5A",
+		none = "none",
+	},
+	-- Vibrant theme (high saturation)
+	vibrant = {
+		placeholder = "#252525",
+		color100 = "#FFFFFF",
+		color200 = "#EEEEEE",
+		color300 = "#BBBBBB",
+		color400 = "#777777",
+		color500 = "#444444",
+		color600 = "#222222",
+		color700 = "#111111",
+		color800 = "#000000",
+		primary = "#FF8C42",
+		success = "#4EC9B0",
+		warning = "#DCDCAA",
+		error = "#F44747",
+		violet = "#C586C0",
+		crimson = "#F44747",
+		tide = "#569CD6",
+		sage = "#6A9955",
+		gold = "#DCDCAA",
+		seafoam = "#4EC9B0",
+		rust = "#CE9178",
+		frost = "#569CD6",
+		amber = "#DCDCAA",
+		coral = "#FF6B68",
+		moss = "#B5CEA8",
+		ember = "#F06292",
 		none = "none",
 	},
 }
 
-local palette = {}
+local M = {}
 
-palette = variants.main
+function M.get(variant)
+	return variants[variant] or variants.main
+end
 
-return palette
+return M

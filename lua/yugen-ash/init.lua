@@ -12,7 +12,7 @@ local M = {}
 
 local config = {
 	bold_vert_split = false,
-	dark_variant = "main",
+	variant = "main", -- main, rich, muted, vibrant
 	transparent = false,
 	transparent_statusline = false,
 	disable_italics = false,
@@ -55,19 +55,6 @@ local config = {
 
 function M.setup(opts)
 	opts = opts or {}
-
-	if opts.groups and type(opts.groups.headings) == "string" then
-		opts.groups.headings = {
-			h1 = opts.groups.headings,
-			h2 = opts.groups.headings,
-			h3 = opts.groups.headings,
-			h4 = opts.groups.headings,
-			h5 = opts.groups.headings,
-			h6 = opts.groups.headings,
-		}
-	end
-
-	config.user_variant = opts.dark_variant or nil
 	config = vim.tbl_deep_extend("force", config, opts)
 end
 
