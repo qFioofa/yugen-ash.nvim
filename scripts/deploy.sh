@@ -4,8 +4,7 @@ set -e
 
 PLUGIN_NAME="yugen-ash.nvim"
 PLUGIN_DIR="$(cd "$(dirname "$0")" && cd .. && pwd)"
-NEOVM_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/nvim"
-TARGET_DIR="$NEOVM_CONFIG_DIR/pack/plugins/start/$PLUGIN_NAME"
+TARGET_DIR="$HOME/.local/share/nvim/lazy/$PLUGIN_NAME"
 
 mkdir -p "$(dirname "$TARGET_DIR")"
 
