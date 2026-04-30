@@ -258,6 +258,60 @@ function M.get(config)
 	theme.NvimTreeGitStaged = { fg = p.seafoam }
 	theme.WinSeparator = { fg = p.color600, bg = p.color700 }
 
+	-- Markdown
+	theme.markdownHeadingDelimiter = { fg = p.primary, style = "bold" }
+	theme.markdownHeadingRule = { fg = p.color400 }
+	theme.markdownHeadingTitle = { fg = p.primary, style = "bold" }
+	theme.markdownH1 = { fg = p.primary, style = "bold" }
+	theme.markdownH2 = { fg = p.coral, style = "bold" }
+	theme.markdownH3 = { fg = p.gold, style = "bold" }
+	theme.markdownH4 = { fg = p.crimson, style = "bold" }
+	theme.markdownH5 = { fg = p.violet, style = "bold" }
+	theme.markdownH6 = { fg = p.tide, style = "bold" }
+	theme.markdownBold = { style = "bold" }
+	theme.markdownItalic = { style = "italic" }
+	theme.markdownBoldItalic = { style = "bold,italic" }
+	theme.markdownCode = { fg = p.sage }
+	theme.markdownCodeBlock = { fg = p.sage }
+	theme.markdownCodeDelimiter = { fg = p.color400 }
+	theme.markdownUrl = { fg = p.tide, style = "underline" }
+	theme.markdownLinkText = { fg = p.primary }
+	theme.markdownLinkDelimiter = { fg = p.color400 }
+	theme.markdownUrlTitle = { fg = p.sage }
+	theme.markdownUrlTitleDelimiter = { fg = p.color400 }
+	theme.markdownListMarker = { fg = p.primary }
+	theme.markdownOrderedListMarker = { fg = p.primary }
+	theme.markdownRule = { fg = p.color400 }
+	theme.markdownBlockquote = { fg = p.color400 }
+	theme.markdownH1Delimiter = { fg = p.color400 }
+	theme.markdownH2Delimiter = { fg = p.color400 }
+	theme.markdownH3Delimiter = { fg = p.color400 }
+	theme.markdownH4Delimiter = { fg = p.color400 }
+	theme.markdownH5Delimiter = { fg = p.color400 }
+	theme.markdownH6Delimiter = { fg = p.color400 }
+
+	-- Treesitter markdown
+	theme["@markup.heading"] = { fg = p.primary, style = "bold" }
+	theme["@markup.heading.1.markdown"] = { fg = p.primary, style = "bold" }
+	theme["@markup.heading.2.markdown"] = { fg = p.coral, style = "bold" }
+	theme["@markup.heading.3.markdown"] = { fg = p.gold, style = "bold" }
+	theme["@markup.heading.4.markdown"] = { fg = p.crimson, style = "bold" }
+	theme["@markup.heading.5.markdown"] = { fg = p.violet, style = "bold" }
+	theme["@markup.heading.6.markdown"] = { fg = p.tide, style = "bold" }
+	theme["@markup.bold"] = { style = "bold" }
+	theme["@markup.italic"] = { style = "italic" }
+	theme["@markup.strikethrough"] = { style = "strikethrough" }
+	theme["@markup.underline"] = { style = "underline" }
+	theme["@markup.link"] = { fg = p.primary }
+	theme["@markup.link.label"] = { fg = p.primary }
+	theme["@markup.link.url"] = { fg = p.tide, style = "underline" }
+	theme["@markup.raw"] = { fg = p.sage }
+	theme["@markup.raw.block"] = { fg = p.sage }
+	theme["@markup.list"] = { fg = p.primary }
+	theme["@markup.list.unchecked"] = { fg = p.color400 }
+	theme["@markup.list.checked"] = { fg = p.success }
+	theme["@punctuation.special.markdown"] = { fg = p.color400 }
+
 	-- Cmp
 	theme.CmpItemAbbr = { fg = p.color200 }
 	theme.CmpItemAbbrMatch = { fg = p.color300, style = "bold" }
