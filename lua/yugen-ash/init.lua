@@ -12,7 +12,7 @@ local M = {}
 
 local config = {
 	bold_vert_split = false,
-	variant = "main", -- main, rich, muted, vibrant
+	variant = "main", -- main, rich, muted, vibrant, light
 	transparent = false,
 	transparent_statusline = false,
 	disable_italics = false,

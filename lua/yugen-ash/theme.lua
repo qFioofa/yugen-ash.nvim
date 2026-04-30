@@ -94,19 +94,54 @@ function M.get(config)
 	theme.Italic = { style = "italic" }
 
 	-- Diagnostics
-	theme.DiagnosticError = { fg = groups.error }
-	theme.DiagnosticWarn = { fg = groups.warn }
-	theme.DiagnosticInfo = { fg = groups.info }
-	theme.DiagnosticHint = { fg = groups.hint }
-	theme.DiagnosticUnderlineError = { sp = groups.error, style = "undercurl" }
-	theme.DiagnosticUnderlineWarn = { sp = groups.warn, style = "undercurl" }
-	theme.DiagnosticUnderlineInfo = { sp = groups.info, style = "undercurl" }
-	theme.DiagnosticUnderlineHint = { sp = groups.hint, style = "undercurl" }
-	theme.DiagnosticVirtualTextError = { fg = groups.error }
-	theme.DiagnosticVirtualTextWarn = { fg = groups.warn }
-	theme.DiagnosticVirtualTextInfo = { fg = groups.info }
-	theme.DiagnosticVirtualTextHint = { fg = groups.hint }
+	theme.DiagnosticError = { fg = p.error }
+	theme.DiagnosticWarn = { fg = p.warning }
+	theme.DiagnosticInfo = { fg = p.tide }
+	theme.DiagnosticHint = { fg = p.success }
+	theme.DiagnosticUnderlineError = { sp = p.error, style = "undercurl" }
+	theme.DiagnosticUnderlineWarn = { sp = p.warning, style = "undercurl" }
+	theme.DiagnosticUnderlineInfo = { sp = p.tide, style = "undercurl" }
+	theme.DiagnosticUnderlineHint = { sp = p.success, style = "undercurl" }
+	theme.DiagnosticVirtualTextError = { fg = p.error }
+	theme.DiagnosticVirtualTextWarn = { fg = p.warning }
+	theme.DiagnosticVirtualTextInfo = { fg = p.tide }
+	theme.DiagnosticVirtualTextHint = { fg = p.success }
+	theme.DiagnosticFloatingError = { fg = p.error, bg = groups.panel }
+	theme.DiagnosticFloatingWarn = { fg = p.warning, bg = groups.panel }
+	theme.DiagnosticFloatingInfo = { fg = p.tide, bg = groups.panel }
+	theme.DiagnosticFloatingHint = { fg = p.success, bg = groups.panel }
+	theme.DiagnosticSignError = { fg = p.error }
+	theme.DiagnosticSignWarn = { fg = p.warning }
+	theme.DiagnosticSignInfo = { fg = p.tide }
+	theme.DiagnosticSignHint = { fg = p.success }
+	theme.DiagnosticDeprecated = { fg = p.color500, style = "strikethrough" }
+	theme.DiagnosticUnnecessary = { fg = p.color500, style = "italic" }
 	theme.LspInlayHint = { fg = p.color400, style = "italic" }
+	theme.LspInlayHintBackground = { bg = groups.panel }
+	theme.LspInlayHintType = { fg = p.color400 }
+	theme.LspInlayHintParameter = { fg = p.color300 }
+
+	-- Legacy LSP diagnostics (compatibility)
+	theme.LspDiagnosticsDefaultError = { fg = p.error }
+	theme.LspDiagnosticsDefaultWarning = { fg = p.warning }
+	theme.LspDiagnosticsDefaultInformation = { fg = p.tide }
+	theme.LspDiagnosticsDefaultHint = { fg = p.success }
+	theme.LspDiagnosticsUnderlineError = { sp = p.error, style = "undercurl" }
+	theme.LspDiagnosticsUnderlineWarning = { sp = p.warning, style = "undercurl" }
+	theme.LspDiagnosticsUnderlineInformation = { sp = p.tide, style = "undercurl" }
+	theme.LspDiagnosticsUnderlineHint = { sp = p.success, style = "undercurl" }
+	theme.LspDiagnosticsVirtualTextError = { fg = p.error }
+	theme.LspDiagnosticsVirtualTextWarning = { fg = p.warning }
+	theme.LspDiagnosticsVirtualTextInformation = { fg = p.tide }
+	theme.LspDiagnosticsVirtualTextHint = { fg = p.success }
+	theme.LspDiagnosticsSignError = { fg = p.error }
+	theme.LspDiagnosticsSignWarning = { fg = p.warning }
+	theme.LspDiagnosticsSignInformation = { fg = p.tide }
+	theme.LspDiagnosticsSignHint = { fg = p.success }
+	theme.LspDiagnosticsFloatingError = { fg = p.error, bg = groups.panel }
+	theme.LspDiagnosticsFloatingWarning = { fg = p.warning, bg = groups.panel }
+	theme.LspDiagnosticsFloatingInformation = { fg = p.tide, bg = groups.panel }
+	theme.LspDiagnosticsFloatingHint = { fg = p.success, bg = groups.panel }
 
 	-- Treesitter
 	theme["@variable"] = { fg = p.color200 }
