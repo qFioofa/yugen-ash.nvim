@@ -55,7 +55,17 @@ function M.get(p, groups, styles)
 		["@markup.list"] = { fg = p.primary },
 		["@markup.list.unchecked"] = { fg = p.color400 },
 		["@markup.list.checked"] = { fg = p.success },
+		["@markup.quote"] = { fg = p.color400, style = styles.italic },
+		["@markup.link.label.markdown_inline"] = { fg = p.primary },
+		["@markup.link.url.markdown_inline"] = { fg = p.tide, style = "underline" },
+		["@markup.raw.markdown_inline"] = { fg = p.sage },
+		["@markup.raw.delimiter.markdown_inline"] = { fg = p.color400 },
+		["@markup.italic.markdown_inline"] = { style = "italic" },
+		["@markup.strong.markdown_inline"] = { style = "bold" },
+		["@label.markdown"] = { fg = p.primary },
 		["@punctuation.special.markdown"] = { fg = p.color400 },
+		["@punctuation.delimiter.markdown"] = { fg = p.color400 },
+		["@conceal.markdown"] = { fg = p.color400 },
 	}
 end
 
