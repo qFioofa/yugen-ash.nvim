@@ -58,6 +58,12 @@ function M.setup(opts)
 	config = vim.tbl_deep_extend("force", config, opts)
 end
 
+-- Exposes the resolved config so external integrations (e.g. the lualine
+-- theme module) can pick up the active variant.
+function M.get_config()
+	return config
+end
+
 function M.colorscheme()
 	if vim.g.colors_name then
 		vim.cmd("hi clear")
