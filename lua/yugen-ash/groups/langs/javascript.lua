@@ -1,0 +1,80 @@
+-- JavaScript language groups (.js / .mjs / .jsx) — vimscript syntax + Treesitter
+
+local M = {}
+
+function M.get(p, groups, styles)
+	return {
+		-- Legacy vim-javascript / pangloss syntax groups
+		javaScriptNull = { fg = p.violet },
+		javaScriptBoolean = { fg = p.tide },
+		javaScriptNumber = { fg = p.violet },
+		javaScriptFunction = { fg = p.crimson },
+		javaScriptIdentifier = { fg = p.crimson },
+		javaScriptOperator = { fg = p.tide },
+		javaScriptBraces = { fg = p.color400 },
+		javaScriptParens = { fg = p.color400 },
+		javaScriptReserved = { fg = p.crimson },
+		javaScriptType = { fg = p.gold },
+		javaScriptStatement = { fg = p.crimson },
+		javaScriptConditional = { fg = p.tide },
+		javaScriptRepeat = { fg = p.tide },
+		javaScriptException = { fg = p.tide },
+		javaScriptMessage = { fg = p.crimson },
+		javaScriptGlobal = { fg = p.amber },
+		javaScriptMember = { fg = p.color300 },
+		javaScriptStringS = { fg = p.sage },
+		javaScriptStringD = { fg = p.sage },
+		jsThis = { fg = p.color300 },
+		jsSuper = { fg = p.color300 },
+		jsFunction = { fg = p.crimson },
+		jsArrowFunction = { fg = p.crimson },
+		jsClassDefinition = { fg = p.gold },
+		jsClassKeyword = { fg = p.crimson },
+		jsImport = { fg = p.violet },
+		jsExport = { fg = p.crimson },
+		jsFrom = { fg = p.violet },
+		jsModuleKeyword = { fg = p.violet },
+		jsGlobalObjects = { fg = p.amber },
+		jsGlobalNodeObjects = { fg = p.amber },
+		jsBuiltins = { fg = p.crimson },
+		jsUndefined = { fg = p.violet },
+		jsNull = { fg = p.violet },
+		jsObjectKey = { fg = p.color300 },
+		jsObjectProp = { fg = p.color300 },
+		jsTemplateBraces = { fg = p.coral },
+		jsTemplateString = { fg = p.sage },
+		jsTernaryIfOperator = { fg = p.tide },
+		jsOperatorKeyword = { fg = p.tide },
+		jsDestructuringBlock = { fg = p.color200 },
+
+		-- JavaScript Treesitter
+		["@keyword.javascript"] = { fg = p.crimson },
+		["@keyword.import.javascript"] = { fg = p.violet },
+		["@keyword.export.javascript"] = { fg = p.crimson },
+		["@keyword.function.javascript"] = { fg = p.crimson },
+		["@function.javascript"] = { fg = p.primary },
+		["@function.builtin.javascript"] = { fg = p.crimson },
+		["@constructor.javascript"] = { fg = p.gold },
+		["@type.javascript"] = { fg = p.gold },
+		["@type.builtin.javascript"] = { fg = p.amber },
+		["@constant.builtin.javascript"] = { fg = p.violet },
+		["@variable.builtin.javascript"] = { fg = p.color300 },
+		["@property.javascript"] = { fg = p.color300 },
+		["@label.javascript"] = { fg = p.seafoam },
+		["@punctuation.special.javascript"] = { fg = p.coral },
+		["@string.template.javascript"] = { fg = p.sage },
+
+		-- JSX / TSX Treesitter (shared tag captures)
+		["@tag.javascript"] = { fg = p.sage },
+		["@tag.builtin.javascript"] = { fg = p.crimson },
+		["@tag.attribute.javascript"] = { fg = p.gold, style = styles.italic },
+		["@tag.delimiter.javascript"] = { fg = p.color400 },
+		["@constructor.tsx"] = { fg = p.gold },
+		["@tag.tsx"] = { fg = p.sage },
+		["@tag.builtin.tsx"] = { fg = p.crimson },
+		["@tag.attribute.tsx"] = { fg = p.gold, style = styles.italic },
+		["@tag.delimiter.tsx"] = { fg = p.color400 },
+	}
+end
+
+return M
