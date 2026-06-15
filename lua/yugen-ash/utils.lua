@@ -48,19 +48,48 @@ utils.blend = function(fg, bg, alpha)
 	return string.format("#%02X%02X%02X", blend_channel(1), blend_channel(2), blend_channel(3))
 end
 
+-- Normalize a color spec to a value accepted by nvim_set_hl, or nil when the
+-- attribute should be left unset ("none"/missing/unresolvable).
+local function color_value(color)
+	if not color then
+		return nil
+	end
+
+	local value = parse_color(color)
+	if value == nil or value == "none" or value == -1 then
+		return nil
+	end
+
+	return value
+end
+
 ---@param group string
 ---@param color table<string, string>
 utils.highlight = function(group, color)
-	local style = color.style and "gui=" .. color.style or "gui=NONE"
-	local fg = color.fg and "guifg=" .. parse_color(color.fg) or "guifg=NONE"
-	local bg = color.bg and "guibg=" .. parse_color(color.bg) or "guibg=NONE"
-	local sp = color.sp and "guisp=" .. parse_color(color.sp) or ""
-
-	vim.cmd(string.format("highlight %s %s %s %s %s", group, style, fg, bg, sp))
-
+	-- A link supersedes any other attribute, matching the previous behavior
+	-- where `highlight! link` ran last.
 	if color.link then
-		vim.cmd(string.format("highlight! link %s %s", group, color.link))
+		vim.api.nvim_set_hl(0, group, { link = color.link })
+		return
 	end
+
+	local hl = {
+		fg = color_value(color.fg),
+		bg = color_value(color.bg),
+		sp = color_value(color.sp),
+	}
+
+	-- `style` is a comma-separated list of gui attributes (e.g. "bold,underline").
+	if color.style then
+		for attr in string.gmatch(color.style, "[^,]+") do
+			attr = attr:match("^%s*(.-)%s*$")
+			if attr ~= "" and attr ~= "none" then
+				hl[attr] = true
+			end
+		end
+	end
+
+	vim.api.nvim_set_hl(0, group, hl)
 end
 
 return utils
