@@ -10,7 +10,7 @@ function M.get(p, groups, styles)
 		nixSimpleBuiltin = { fg = p.crimson },
 		nixNamespacedBuiltin = { fg = p.crimson },
 		nixConditional = { fg = p.tide },
-		nixOperator = { fg = p.tide },
+		nixOperator = { fg = p.frost },
 		nixBoolean = { fg = p.tide },
 		nixNull = { fg = p.violet },
 		nixInteger = { fg = p.violet },
@@ -19,7 +19,7 @@ function M.get(p, groups, styles)
 		nixStringDelimiter = { fg = p.sage },
 		nixSimpleString = { fg = p.sage },
 		nixIndentedString = { fg = p.sage },
-		nixStringSpecial = { fg = p.gold },
+		nixStringSpecial = { fg = p.rust },
 		nixInterpolation = { fg = p.coral },
 		nixInterpolationDelimiter = { fg = p.coral },
 		nixInterpolationParam = { fg = p.coral },
@@ -32,7 +32,7 @@ function M.get(p, groups, styles)
 		nixURI = { fg = p.seafoam, style = "underline" },
 		nixFunctionCall = { fg = p.primary },
 		nixArgumentDefinition = { fg = p.color200 },
-		nixArgOperator = { fg = p.tide },
+		nixArgOperator = { fg = p.frost },
 		nixInherit = { fg = p.crimson },
 
 		-- Nix Treesitter
@@ -47,7 +47,7 @@ function M.get(p, groups, styles)
 		["@string.special.path.nix"] = { fg = p.seafoam },
 		["@string.special.uri.nix"] = { fg = p.seafoam, style = "underline" },
 		["@punctuation.special.nix"] = { fg = p.coral },
-		["@operator.nix"] = { fg = p.tide },
+		["@operator.nix"] = { fg = p.frost },
 	}
 end
 

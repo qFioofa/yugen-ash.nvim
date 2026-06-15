@@ -15,7 +15,7 @@ function M.get(p, groups, styles)
 		jsonNull = { fg = p.violet },
 		jsonNumber = { fg = p.violet },
 		jsonNoise = { fg = p.color400 },
-		jsonEscape = { fg = p.gold },
+		jsonEscape = { fg = p.rust },
 		jsonComment = { fg = p.color400 },
 		jsoncComment = { fg = p.color400 },
 
@@ -28,7 +28,7 @@ function M.get(p, groups, styles)
 		["@constant.builtin.json"] = { fg = p.violet },
 		["@punctuation.bracket.json"] = { fg = p.color400 },
 		["@punctuation.delimiter.json"] = { fg = p.color400 },
-		["@string.escape.json"] = { fg = p.gold },
+		["@string.escape.json"] = { fg = p.rust },
 
 		-- JSONC Treesitter
 		["@property.jsonc"] = { fg = p.tide },

@@ -30,7 +30,7 @@ function M.get(p, groups, styles)
 		["@constant.svelte"] = { fg = p.violet },
 		["@punctuation.special.svelte"] = { fg = p.coral },
 		["@punctuation.bracket.svelte"] = { fg = p.coral },
-		["@property.svelte"] = { fg = p.gold, style = styles.italic },
+		["@property.svelte"] = { fg = p.color300, style = styles.italic },
 		["@type.svelte"] = { fg = p.gold },
 		["@function.svelte"] = { fg = p.primary },
 		["@variable.svelte"] = { fg = p.color200 },

@@ -10,7 +10,7 @@ function M.get(p, groups, styles)
 		javaScriptNumber = { fg = p.violet },
 		javaScriptFunction = { fg = p.crimson },
 		javaScriptIdentifier = { fg = p.crimson },
-		javaScriptOperator = { fg = p.tide },
+		javaScriptOperator = { fg = p.frost },
 		javaScriptBraces = { fg = p.color400 },
 		javaScriptParens = { fg = p.color400 },
 		javaScriptReserved = { fg = p.crimson },
@@ -43,8 +43,8 @@ function M.get(p, groups, styles)
 		jsObjectProp = { fg = p.color300 },
 		jsTemplateBraces = { fg = p.coral },
 		jsTemplateString = { fg = p.sage },
-		jsTernaryIfOperator = { fg = p.tide },
-		jsOperatorKeyword = { fg = p.tide },
+		jsTernaryIfOperator = { fg = p.frost },
+		jsOperatorKeyword = { fg = p.frost },
 		jsDestructuringBlock = { fg = p.color200 },
 
 		-- JavaScript Treesitter

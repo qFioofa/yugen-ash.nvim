@@ -27,8 +27,8 @@ function M.get(p, groups, styles)
 		zigString = { fg = p.sage },
 		zigMultilineString = { fg = p.sage },
 		zigCharacter = { fg = p.sage },
-		zigStringEscape = { fg = p.gold },
-		zigOperator = { fg = p.tide },
+		zigStringEscape = { fg = p.rust },
+		zigOperator = { fg = p.frost },
 		zigComment = { fg = p.color400 },
 		zigDocComment = { fg = p.color400 },
 		zigVarDecl = { fg = p.crimson },
@@ -49,7 +49,7 @@ function M.get(p, groups, styles)
 		["@variable.builtin.zig"] = { fg = p.color300 },
 		["@field.zig"] = { fg = p.color300 },
 		["@label.zig"] = { fg = p.seafoam },
-		["@string.escape.zig"] = { fg = p.gold },
+		["@string.escape.zig"] = { fg = p.rust },
 		["@attribute.zig"] = { fg = p.amber },
 	}
 end

@@ -16,7 +16,7 @@ function M.get(p, groups, styles)
 		yamlFlowStringDelimiter = { fg = p.sage },
 		yamlSingleQuote = { fg = p.sage },
 		yamlDoubleQuote = { fg = p.sage },
-		yamlEscape = { fg = p.gold },
+		yamlEscape = { fg = p.rust },
 		yamlBool = { fg = p.tide },
 		yamlNull = { fg = p.violet },
 		yamlInteger = { fg = p.violet },

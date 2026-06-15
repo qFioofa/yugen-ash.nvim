@@ -12,7 +12,7 @@ function M.get(p, groups, styles)
 		tomlKeyDq = { fg = p.tide },
 		tomlKeySq = { fg = p.tide },
 		tomlString = { fg = p.sage },
-		tomlEscape = { fg = p.gold },
+		tomlEscape = { fg = p.rust },
 		tomlBoolean = { fg = p.tide },
 		tomlInteger = { fg = p.violet },
 		tomlFloat = { fg = p.violet },

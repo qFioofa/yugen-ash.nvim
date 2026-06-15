@@ -24,7 +24,7 @@ function M.get(p, groups, styles)
 		["@variable.dockerfile"] = { fg = p.color200 },
 		["@property.dockerfile"] = { fg = p.tide },
 		["@constant.dockerfile"] = { fg = p.violet },
-		["@operator.dockerfile"] = { fg = p.tide },
+		["@operator.dockerfile"] = { fg = p.frost },
 		["@function.dockerfile"] = { fg = p.primary },
 		["@punctuation.special.dockerfile"] = { fg = p.coral },
 		["@comment.dockerfile"] = { fg = p.color400 },

@@ -43,7 +43,7 @@ function M.get(p, groups, styles)
 		["@string.proto"] = { fg = p.sage },
 		["@number.proto"] = { fg = p.violet },
 		["@boolean.proto"] = { fg = p.tide },
-		["@operator.proto"] = { fg = p.tide },
+		["@operator.proto"] = { fg = p.frost },
 		["@punctuation.delimiter.proto"] = { fg = p.color400 },
 		["@comment.proto"] = { fg = p.color400 },
 	}

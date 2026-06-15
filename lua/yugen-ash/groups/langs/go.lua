@@ -32,13 +32,13 @@ function M.get(p, groups, styles)
 		goReceiverType = { fg = p.gold },
 		goString = { fg = p.sage },
 		goRawString = { fg = p.sage },
-		goEscape = { fg = p.gold },
+		goEscape = { fg = p.rust },
 		goField = { fg = p.color300 },
 		goBoolean = { fg = p.tide },
 		goConstants = { fg = p.violet },
 		goComment = { fg = p.color400 },
 		goSpecialString = { fg = p.gold },
-		goOperator = { fg = p.tide },
+		goOperator = { fg = p.frost },
 
 		-- Go Treesitter
 		["@keyword.go"] = { fg = p.crimson },
@@ -54,7 +54,7 @@ function M.get(p, groups, styles)
 		["@module.go"] = { fg = p.gold },
 		["@label.go"] = { fg = p.seafoam },
 		["@string.special.go"] = { fg = p.gold },
-		["@operator.go"] = { fg = p.tide },
+		["@operator.go"] = { fg = p.frost },
 		["@punctuation.special.go"] = { fg = p.coral },
 	}
 end

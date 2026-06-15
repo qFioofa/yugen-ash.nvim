@@ -13,7 +13,7 @@ function M.get(p, groups, styles)
 		csModifier = { fg = p.crimson },
 		csAccessModifier = { fg = p.crimson },
 		csKeyword = { fg = p.crimson },
-		csLogicSymbols = { fg = p.tide },
+		csLogicSymbols = { fg = p.frost },
 		csConditional = { fg = p.tide },
 		csRepeat = { fg = p.tide },
 		csLabel = { fg = p.seafoam },

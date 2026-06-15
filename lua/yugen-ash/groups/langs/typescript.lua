@@ -23,7 +23,7 @@ function M.get(p, groups, styles)
 		typescriptConditional = { fg = p.tide },
 		typescriptRepeat = { fg = p.tide },
 		typescriptStatementKeyword = { fg = p.crimson },
-		typescriptOperator = { fg = p.tide },
+		typescriptOperator = { fg = p.frost },
 		typescriptBinaryOp = { fg = p.tide },
 		typescriptDecorator = { fg = p.amber, style = styles.italic },
 		typescriptImport = { fg = p.violet },

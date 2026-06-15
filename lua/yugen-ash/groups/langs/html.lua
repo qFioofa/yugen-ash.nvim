@@ -13,7 +13,7 @@ function M.get(p, groups, styles)
 		htmlArg = { fg = p.gold, style = styles.italic },
 		htmlString = { fg = p.sage },
 		htmlValue = { fg = p.sage },
-		htmlSpecialChar = { fg = p.gold },
+		htmlSpecialChar = { fg = p.rust },
 		htmlComment = { fg = p.color400 },
 		htmlCommentPart = { fg = p.color400 },
 		htmlPreProc = { fg = p.crimson },

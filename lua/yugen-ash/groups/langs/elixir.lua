@@ -20,7 +20,7 @@ function M.get(p, groups, styles)
 		elixirDefjp = { fg = p.crimson },
 		elixirInclude = { fg = p.violet },
 		elixirImport = { fg = p.violet },
-		elixirOperator = { fg = p.tide },
+		elixirOperator = { fg = p.frost },
 		elixirModuleDeclaration = { fg = p.gold },
 		elixirAlias = { fg = p.gold },
 		elixirAtom = { fg = p.seafoam },
@@ -61,7 +61,7 @@ function M.get(p, groups, styles)
 		["@variable.member.elixir"] = { fg = p.seafoam },
 		["@attribute.elixir"] = { fg = p.amber },
 		["@comment.documentation.elixir"] = { fg = p.color400 },
-		["@operator.elixir"] = { fg = p.tide },
+		["@operator.elixir"] = { fg = p.frost },
 		["@punctuation.special.elixir"] = { fg = p.coral },
 	}
 end

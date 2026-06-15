@@ -43,6 +43,38 @@ vim.cmd("colorscheme yugen-ash")
 }
 ```
 
+## Highlighting logic
+
+Colors are assigned by **semantic role**, not per language: a given role gets
+the same color everywhere, and each language file just maps its syntax/
+Treesitter groups onto these roles. This keeps every language consistent and
+makes related concepts visually distinct.
+
+| Color | Role |
+|-------|------|
+| `crimson` | Keywords, declarations, storage/modifiers, language builtins, structures |
+| `tide` | Control flow (conditional, loop, case), booleans, exceptions |
+| `frost` | Operators (kept distinct from control-flow keywords) |
+| `violet` | Imports/includes, numbers, constants, macros, `null`/`nil`/`None` |
+| `sage` | Strings, characters, markup tags |
+| `primary` | Functions — names and calls, headings |
+| `gold` | Types, classes/structs/enums, methods |
+| `amber` | Builtin types, annotations/decorators/attributes |
+| `seafoam` | Labels, atoms/symbols |
+| `coral` | Interpolation, regex, special punctuation |
+| `rust` | Escape sequences and special characters (kept distinct from types) |
+| `color200` | Plain text and identifiers |
+| `color300` | Object properties and members |
+| `color400` | Comments and punctuation/delimiters |
+
+Two roles are deliberately separated from neighbours they used to share:
+**operators** use `frost` so they no longer blend into the `tide` control-flow
+keywords, and **escapes** use `rust` so they stand apart from `gold` types.
+LSP semantic tokens (`@lsp.type.*` / `@lsp.typemod.*`) are linked to the
+matching Treesitter captures, so they follow the same roles whether or not a
+server provides them. All variants (`main`, `rich`, `muted`, `vibrant`,
+`light`) share this role mapping and only swap the underlying hex values.
+
 ## Commands
 
 The theme is compiled once and cached under `stdpath("cache")/yugen-ash`, then

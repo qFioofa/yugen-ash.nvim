@@ -29,7 +29,7 @@ function M.get(p, groups, styles)
 		["@variable.cmake"] = { fg = p.color200 },
 		["@constant.cmake"] = { fg = p.violet },
 		["@string.cmake"] = { fg = p.sage },
-		["@operator.cmake"] = { fg = p.tide },
+		["@operator.cmake"] = { fg = p.frost },
 		["@property.cmake"] = { fg = p.gold },
 		["@punctuation.special.cmake"] = { fg = p.coral },
 		["@punctuation.bracket.cmake"] = { fg = p.color400 },

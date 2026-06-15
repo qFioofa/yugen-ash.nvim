@@ -33,7 +33,7 @@ function M.get(p, groups, styles)
 		texCite = { fg = p.seafoam },
 		texString = { fg = p.sage },
 		texDelimiter = { fg = p.color400 },
-		texSpecialChar = { fg = p.gold },
+		texSpecialChar = { fg = p.rust },
 		texOption = { fg = p.amber },
 		texCmdArgs = { fg = p.color200 },
 		texDefName = { fg = p.primary },

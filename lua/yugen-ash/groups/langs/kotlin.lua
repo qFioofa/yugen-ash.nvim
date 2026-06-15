@@ -24,7 +24,7 @@ function M.get(p, groups, styles)
 		ktComplexInterpolation = { fg = p.coral },
 		ktComplexInterpolationBrace = { fg = p.coral },
 		ktEscapedName = { fg = p.color200 },
-		ktEscape = { fg = p.gold },
+		ktEscape = { fg = p.rust },
 		ktLabel = { fg = p.seafoam },
 		ktAnnotation = { fg = p.amber, style = styles.italic },
 		ktBoolean = { fg = p.tide },
@@ -35,7 +35,7 @@ function M.get(p, groups, styles)
 		ktComment = { fg = p.color400 },
 		ktDocComment = { fg = p.color400 },
 		ktShebang = { fg = p.color400 },
-		ktOperator = { fg = p.tide },
+		ktOperator = { fg = p.frost },
 
 		-- Kotlin Treesitter
 		["@keyword.kotlin"] = { fg = p.crimson },
