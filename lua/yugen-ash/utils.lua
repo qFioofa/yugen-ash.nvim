@@ -63,14 +63,14 @@ local function color_value(color)
 	return value
 end
 
----@param group string
+-- Translate a highlight spec into the argument table accepted by
+-- nvim_set_hl. Shared by the live highlighter and the cache compiler.
 ---@param color table<string, string>
-utils.highlight = function(group, color)
+utils.to_hl = function(color)
 	-- A link supersedes any other attribute, matching the previous behavior
 	-- where `highlight! link` ran last.
 	if color.link then
-		vim.api.nvim_set_hl(0, group, { link = color.link })
-		return
+		return { link = color.link }
 	end
 
 	local hl = {
@@ -89,7 +89,13 @@ utils.highlight = function(group, color)
 		end
 	end
 
-	vim.api.nvim_set_hl(0, group, hl)
+	return hl
+end
+
+---@param group string
+---@param color table<string, string>
+utils.highlight = function(group, color)
+	vim.api.nvim_set_hl(0, group, utils.to_hl(color))
 end
 
 return utils

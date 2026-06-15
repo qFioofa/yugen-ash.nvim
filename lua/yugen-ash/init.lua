@@ -17,6 +17,7 @@ local config = {
 	transparent_statusline = false,
 	disable_italics = false,
 	dim_nc_background = false,
+	compile = true, -- cache the compiled theme for faster startup
 
 	groups = {
 		background = "color700",
@@ -72,6 +73,19 @@ function M.colorscheme()
 	vim.opt.termguicolors = true
 	vim.g.colors_name = "yugen-ash"
 
+	if config.compile then
+		local payload = require("yugen-ash.cache").load(config)
+		for group, args in pairs(payload.highlights) do
+			vim.api.nvim_set_hl(0, group, args)
+		end
+		for i = 0, 15 do
+			vim.g["terminal_color_" .. i] = payload.terminal[i]
+		end
+		return
+	end
+
+	-- Uncached path: build and apply the theme directly. theme.get sets the
+	-- terminal colors as a side effect.
 	local theme = require("yugen-ash.theme").get(config)
 
 	for group, color in pairs(theme) do
@@ -83,6 +97,12 @@ function M.colorscheme()
 	for group, color in pairs(config.highlight_groups) do
 		utils.highlight(group, color)
 	end
+end
+
+-- Removes the compiled theme caches. Call after editing the theme sources if
+-- the mtime-based invalidation is bypassed, or to force a clean rebuild.
+function M.clean()
+	require("yugen-ash.cache").clean()
 end
 
 return M
