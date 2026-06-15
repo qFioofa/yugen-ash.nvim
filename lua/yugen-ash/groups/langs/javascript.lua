@@ -57,6 +57,7 @@ function M.get(p, groups, styles)
 		["@constructor.javascript"] = { fg = p.primary },
 		["@type.javascript"] = { fg = p.gold },
 		["@type.builtin.javascript"] = { fg = p.amber },
+		["@constant.javascript"] = { fg = p.color200 },
 		["@constant.builtin.javascript"] = { fg = p.violet },
 		["@variable.builtin.javascript"] = { fg = p.color300 },
 		["@property.javascript"] = { fg = p.color300 },

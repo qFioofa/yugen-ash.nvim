@@ -39,7 +39,7 @@ function M.get(p, groups, styles)
 		pythonComment = { fg = p.color400 },
 		pythonDocstring = { fg = p.color400 },
 		pythonSelf = { fg = p.color300, style = styles.italic },
-		pythonAttribute = { fg = p.color300 },
+		pythonAttribute = { fg = p.color200 },
 		pythonDot = { fg = p.color400 },
 
 		-- Python Treesitter
@@ -55,6 +55,9 @@ function M.get(p, groups, styles)
 		["@constant.python"] = { fg = p.violet },
 		["@constant.builtin.python"] = { fg = p.violet },
 		["@variable.builtin.python"] = { fg = p.color300, style = styles.italic },
+		["@variable.member.python"] = { fg = p.color200 },
+		["@property.python"] = { fg = p.color200 },
+		["@variable.object.property.python"] = { fg = p.color200 },
 		["@attribute.python"] = { fg = p.amber, style = styles.italic },
 		["@constructor.python"] = { fg = p.primary },
 		["@string.documentation.python"] = { fg = p.color400 },
