@@ -65,10 +65,30 @@ local modules = {
 	"yugen-ash.groups.terminal",
 }
 
+-- Resolve palette-name references in the user-facing `groups` table to concrete
+-- colors against the active palette. Values may be palette keys ("color800",
+-- "sage"), a literal hex string ("#1a1a1a") or "none"; anything not present in
+-- the palette is passed through unchanged. Nested tables (e.g. `headings`)
+-- recurse. Without this, palette names like "color600" never resolve (the
+-- palette module only exposes `get`), leaving borders/panels uncolored.
+local function resolve_groups(groups, p)
+	local resolved = {}
+	for key, value in pairs(groups) do
+		if type(value) == "table" then
+			resolved[key] = resolve_groups(value, p)
+		elseif type(value) == "string" then
+			resolved[key] = p[value] or value
+		else
+			resolved[key] = value
+		end
+	end
+	return resolved
+end
+
 function M.get(config)
 	local variant = config.variant or "main"
 	local p = require("yugen-ash.palette").get(variant)
-	local groups = config.groups or {}
+	local groups = resolve_groups(config.groups or {}, p)
 	local styles = {
 		italic = config.disable_italics and p.none or "italic",
 		vert_split = config.bold_vert_split and groups.border or p.none,
