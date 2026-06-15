@@ -38,7 +38,7 @@ function M.get(p, groups, styles)
 		-- Nix Treesitter
 		["@keyword.nix"] = { fg = p.crimson },
 		["@keyword.import.nix"] = { fg = p.violet },
-		["@function.builtin.nix"] = { fg = p.crimson },
+		["@function.builtin.nix"] = { fg = p.primary },
 		["@function.call.nix"] = { fg = p.primary },
 		["@variable.parameter.nix"] = { fg = p.color200 },
 		["@variable.member.nix"] = { fg = p.color300 },

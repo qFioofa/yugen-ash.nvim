@@ -26,7 +26,7 @@ function M.get(p, groups, styles)
 		["@type.sql"] = { fg = p.gold },
 		["@type.builtin.sql"] = { fg = p.amber },
 		["@function.sql"] = { fg = p.primary },
-		["@function.builtin.sql"] = { fg = p.crimson },
+		["@function.builtin.sql"] = { fg = p.primary },
 		["@function.call.sql"] = { fg = p.primary },
 		["@string.sql"] = { fg = p.sage },
 		["@number.sql"] = { fg = p.violet },

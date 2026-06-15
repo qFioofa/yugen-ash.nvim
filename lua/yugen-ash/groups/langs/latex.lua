@@ -44,7 +44,7 @@ function M.get(p, groups, styles)
 		-- LaTeX Treesitter
 		["@keyword.latex"] = { fg = p.crimson },
 		["@function.latex"] = { fg = p.primary },
-		["@function.macro.latex"] = { fg = p.crimson },
+		["@function.macro.latex"] = { fg = p.primary },
 		["@module.latex"] = { fg = p.gold },
 		["@markup.heading.latex"] = { fg = p.primary, style = "bold" },
 		["@markup.environment.latex"] = { fg = p.violet },

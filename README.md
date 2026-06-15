@@ -52,13 +52,13 @@ makes related concepts visually distinct.
 
 | Color | Role |
 |-------|------|
-| `crimson` | Keywords, declarations, storage/modifiers, language builtins, structures |
+| `crimson` | Keywords, declarations, storage/modifiers, structures |
 | `tide` | Control flow (conditional, loop, case), booleans, exceptions |
 | `frost` | Operators (kept distinct from control-flow keywords) |
 | `violet` | Imports/includes, numbers, constants, macros, `null`/`nil`/`None` |
 | `sage` | Strings, characters, markup tags |
-| `primary` | Functions — names and calls, headings |
-| `gold` | Types, classes/structs/enums, methods |
+| `primary` | All functions — names, calls, builtins, methods, macros and constructors; headings |
+| `gold` | Types, classes/structs/enums |
 | `amber` | Builtin types, annotations/decorators/attributes |
 | `seafoam` | Labels, atoms/symbols |
 | `coral` | Interpolation, regex, special punctuation |

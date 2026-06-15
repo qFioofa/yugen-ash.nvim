@@ -44,7 +44,7 @@ function M.get(p, groups, styles)
 		["@keyword.import.erlang"] = { fg = p.violet },
 		["@function.erlang"] = { fg = p.primary },
 		["@function.call.erlang"] = { fg = p.primary },
-		["@function.builtin.erlang"] = { fg = p.crimson },
+		["@function.builtin.erlang"] = { fg = p.primary },
 		["@module.erlang"] = { fg = p.gold },
 		["@type.erlang"] = { fg = p.gold },
 		["@constant.erlang"] = { fg = p.violet },

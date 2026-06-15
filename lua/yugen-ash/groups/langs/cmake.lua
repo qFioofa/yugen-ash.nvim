@@ -24,7 +24,7 @@ function M.get(p, groups, styles)
 		-- CMake Treesitter
 		["@keyword.cmake"] = { fg = p.crimson },
 		["@function.cmake"] = { fg = p.primary },
-		["@function.builtin.cmake"] = { fg = p.crimson },
+		["@function.builtin.cmake"] = { fg = p.primary },
 		["@function.call.cmake"] = { fg = p.primary },
 		["@variable.cmake"] = { fg = p.color200 },
 		["@constant.cmake"] = { fg = p.violet },

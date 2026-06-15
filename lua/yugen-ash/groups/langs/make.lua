@@ -27,7 +27,7 @@ function M.get(p, groups, styles)
 		-- Make Treesitter
 		["@keyword.make"] = { fg = p.crimson },
 		["@function.make"] = { fg = p.primary },
-		["@function.builtin.make"] = { fg = p.crimson },
+		["@function.builtin.make"] = { fg = p.primary },
 		["@variable.make"] = { fg = p.violet },
 		["@string.make"] = { fg = p.sage },
 		["@operator.make"] = { fg = p.frost },

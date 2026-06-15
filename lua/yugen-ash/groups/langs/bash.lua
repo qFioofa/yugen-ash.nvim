@@ -44,7 +44,7 @@ function M.get(p, groups, styles)
 		["@keyword.conditional.bash"] = { fg = p.tide },
 		["@keyword.repeat.bash"] = { fg = p.tide },
 		["@function.bash"] = { fg = p.primary },
-		["@function.builtin.bash"] = { fg = p.crimson },
+		["@function.builtin.bash"] = { fg = p.primary },
 		["@variable.bash"] = { fg = p.color200 },
 		["@variable.parameter.bash"] = { fg = p.violet },
 		["@string.special.bash"] = { fg = p.gold },

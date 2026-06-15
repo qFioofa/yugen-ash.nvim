@@ -48,7 +48,7 @@ function M.get(p, groups, styles)
 		["@type.go"] = { fg = p.gold },
 		["@type.builtin.go"] = { fg = p.amber },
 		["@function.go"] = { fg = p.primary },
-		["@function.builtin.go"] = { fg = p.crimson },
+		["@function.builtin.go"] = { fg = p.primary },
 		["@constant.builtin.go"] = { fg = p.violet },
 		["@variable.member.go"] = { fg = p.color300 },
 		["@module.go"] = { fg = p.gold },

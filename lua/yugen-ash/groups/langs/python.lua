@@ -48,7 +48,7 @@ function M.get(p, groups, styles)
 		["@keyword.function.python"] = { fg = p.crimson },
 		["@keyword.operator.python"] = { fg = p.tide },
 		["@function.python"] = { fg = p.primary },
-		["@function.builtin.python"] = { fg = p.crimson },
+		["@function.builtin.python"] = { fg = p.primary },
 		["@function.call.python"] = { fg = p.primary },
 		["@type.python"] = { fg = p.gold },
 		["@type.builtin.python"] = { fg = p.amber },
@@ -56,7 +56,7 @@ function M.get(p, groups, styles)
 		["@constant.builtin.python"] = { fg = p.violet },
 		["@variable.builtin.python"] = { fg = p.color300, style = styles.italic },
 		["@attribute.python"] = { fg = p.amber, style = styles.italic },
-		["@constructor.python"] = { fg = p.gold },
+		["@constructor.python"] = { fg = p.primary },
 		["@string.documentation.python"] = { fg = p.color400 },
 		["@punctuation.special.python"] = { fg = p.coral },
 	}
