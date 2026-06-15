@@ -57,6 +57,17 @@ local config = {
 function M.setup(opts)
 	opts = opts or {}
 	config = vim.tbl_deep_extend("force", config, opts)
+
+	vim.api.nvim_create_user_command("YugenAshClean", function()
+		M.clean()
+		vim.notify("yugen-ash: cache cleared", vim.log.levels.INFO)
+	end, { desc = "Remove the yugen-ash compiled cache" })
+
+	vim.api.nvim_create_user_command("YugenAshCompile", function()
+		M.clean()
+		M.colorscheme()
+		vim.notify("yugen-ash: recompiled", vim.log.levels.INFO)
+	end, { desc = "Rebuild the yugen-ash compiled cache and reload" })
 end
 
 -- Exposes the resolved config so external integrations (e.g. the lualine
