@@ -35,7 +35,7 @@ function M.get(p, groups, styles)
 		["@tag.attribute.html"] = { fg = p.gold, style = styles.italic },
 		["@tag.delimiter.html"] = { fg = p.color400 },
 		["@string.html"] = { fg = p.sage },
-		["@constant.html"] = { fg = p.violet },
+		["@constant.html"] = { fg = p.tide },
 		["@text.title.html"] = { fg = p.primary, style = "bold" },
 		["@punctuation.bracket.html"] = { fg = p.color400 },
 		["@punctuation.special.html"] = { fg = p.coral },

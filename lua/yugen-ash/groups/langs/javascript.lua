@@ -30,7 +30,7 @@ function M.get(p, groups, styles)
 		jsArrowFunction = { fg = p.primary },
 		jsClassDefinition = { fg = p.gold },
 		jsClassKeyword = { fg = p.crimson },
-		jsImport = { fg = p.violet },
+		jsImport = { fg = p.crimson },
 		jsExport = { fg = p.crimson },
 		jsFrom = { fg = p.violet },
 		jsModuleKeyword = { fg = p.violet },
@@ -49,7 +49,7 @@ function M.get(p, groups, styles)
 
 		-- JavaScript Treesitter
 		["@keyword.javascript"] = { fg = p.crimson },
-		["@keyword.import.javascript"] = { fg = p.violet },
+		["@keyword.import.javascript"] = { fg = p.crimson },
 		["@keyword.export.javascript"] = { fg = p.crimson },
 		["@keyword.function.javascript"] = { fg = p.crimson },
 		["@function.javascript"] = { fg = p.primary },
@@ -58,7 +58,7 @@ function M.get(p, groups, styles)
 		["@type.javascript"] = { fg = p.gold },
 		["@type.builtin.javascript"] = { fg = p.amber },
 		["@constant.javascript"] = { fg = p.color200 },
-		["@constant.builtin.javascript"] = { fg = p.violet },
+		["@constant.builtin.javascript"] = { fg = p.tide },
 		["@variable.builtin.javascript"] = { fg = p.color300 },
 		["@property.javascript"] = { fg = p.color300 },
 		["@label.javascript"] = { fg = p.seafoam },

@@ -11,7 +11,7 @@ function M.get(p, groups, styles)
 		NoiceCmdlinePopup = { fg = p.color200, bg = p.color700 },
 		NoiceCmdlinePopupBorder = { fg = p.primary },
 		NoiceCmdlinePopupBorderSearch = { fg = p.crimson, bg = p.color700 },
-		NoiceCmdlinePopupTitle = { fg = p.color100, bg = p.color700 },
+		NoiceCmdlinePopupTitle = { fg = p.color200, bg = p.color700 },
 		NoiceCmdlinePopupBorderFilter = { fg = p.crimson, bg = p.color700 },
 		NoiceCmdlinePopupBorderLua = { fg = p.tide, bg = p.color700 },
 		NoiceCmdlinePopupTitleSearch = { fg = p.crimson, bg = p.color700 },

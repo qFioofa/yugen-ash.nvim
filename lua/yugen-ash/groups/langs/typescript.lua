@@ -26,7 +26,7 @@ function M.get(p, groups, styles)
 		typescriptOperator = { fg = p.frost },
 		typescriptBinaryOp = { fg = p.tide },
 		typescriptDecorator = { fg = p.amber, style = styles.italic },
-		typescriptImport = { fg = p.violet },
+		typescriptImport = { fg = p.crimson },
 		typescriptExport = { fg = p.crimson },
 		typescriptModule = { fg = p.violet },
 		typescriptCall = { fg = p.color200 },
@@ -43,7 +43,7 @@ function M.get(p, groups, styles)
 
 		-- TypeScript Treesitter
 		["@keyword.typescript"] = { fg = p.crimson },
-		["@keyword.import.typescript"] = { fg = p.violet },
+		["@keyword.import.typescript"] = { fg = p.crimson },
 		["@keyword.export.typescript"] = { fg = p.crimson },
 		["@keyword.function.typescript"] = { fg = p.crimson },
 		["@function.typescript"] = { fg = p.primary },
@@ -52,7 +52,7 @@ function M.get(p, groups, styles)
 		["@type.typescript"] = { fg = p.gold },
 		["@type.builtin.typescript"] = { fg = p.amber },
 		["@type.definition.typescript"] = { fg = p.gold },
-		["@constant.builtin.typescript"] = { fg = p.violet },
+		["@constant.builtin.typescript"] = { fg = p.tide },
 		["@variable.builtin.typescript"] = { fg = p.color300 },
 		["@property.typescript"] = { fg = p.color300 },
 		["@attribute.typescript"] = { fg = p.amber, style = styles.italic },

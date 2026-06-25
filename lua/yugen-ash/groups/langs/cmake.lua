@@ -27,7 +27,7 @@ function M.get(p, groups, styles)
 		["@function.builtin.cmake"] = { fg = p.primary },
 		["@function.call.cmake"] = { fg = p.primary },
 		["@variable.cmake"] = { fg = p.color200 },
-		["@constant.cmake"] = { fg = p.violet },
+		["@constant.cmake"] = { fg = p.tide },
 		["@string.cmake"] = { fg = p.sage },
 		["@operator.cmake"] = { fg = p.frost },
 		["@property.cmake"] = { fg = p.gold },

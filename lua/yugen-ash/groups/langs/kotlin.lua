@@ -6,7 +6,7 @@ function M.get(p, groups, styles)
 	return {
 		-- Legacy kotlin-vim syntax groups
 		ktKeyword = { fg = p.crimson },
-		ktImport = { fg = p.violet },
+		ktImport = { fg = p.crimson },
 		ktPackage = { fg = p.violet },
 		ktModifier = { fg = p.crimson },
 		ktVisibilityModifier = { fg = p.crimson },
@@ -28,7 +28,7 @@ function M.get(p, groups, styles)
 		ktLabel = { fg = p.seafoam },
 		ktAnnotation = { fg = p.amber, style = styles.italic },
 		ktBoolean = { fg = p.tide },
-		ktConstant = { fg = p.violet },
+		ktConstant = { fg = p.tide },
 		ktNull = { fg = p.violet },
 		ktNumber = { fg = p.violet },
 		ktFloat = { fg = p.violet },
@@ -39,15 +39,15 @@ function M.get(p, groups, styles)
 
 		-- Kotlin Treesitter
 		["@keyword.kotlin"] = { fg = p.crimson },
-		["@keyword.import.kotlin"] = { fg = p.violet },
+		["@keyword.import.kotlin"] = { fg = p.crimson },
 		["@keyword.function.kotlin"] = { fg = p.crimson },
 		["@keyword.return.kotlin"] = { fg = p.crimson },
 		["@type.kotlin"] = { fg = p.gold },
 		["@type.builtin.kotlin"] = { fg = p.amber },
 		["@function.kotlin"] = { fg = p.primary },
 		["@function.builtin.kotlin"] = { fg = p.primary },
-		["@constant.kotlin"] = { fg = p.violet },
-		["@constant.builtin.kotlin"] = { fg = p.violet },
+		["@constant.kotlin"] = { fg = p.tide },
+		["@constant.builtin.kotlin"] = { fg = p.tide },
 		["@variable.builtin.kotlin"] = { fg = p.color300 },
 		["@attribute.kotlin"] = { fg = p.amber, style = styles.italic },
 		["@annotation.kotlin"] = { fg = p.amber, style = styles.italic },

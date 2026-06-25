@@ -4,7 +4,7 @@ local M = {}
 
 function M.get(p, groups, styles)
 	return {
-		Constant = { fg = p.violet },
+		Constant = { fg = p.tide },
 		String = { fg = p.sage },
 		Character = { fg = p.sage },
 		Number = { fg = p.violet },
@@ -20,7 +20,7 @@ function M.get(p, groups, styles)
 		Keyword = { fg = p.crimson },
 		Exception = { fg = p.tide },
 		PreProc = { fg = p.crimson },
-		Include = { fg = p.violet },
+		Include = { fg = p.crimson },
 		Type = { fg = p.gold },
 		Special = { fg = p.rust },
 		Tag = { fg = p.primary },

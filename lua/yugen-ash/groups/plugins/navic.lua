@@ -5,7 +5,7 @@ local M = {}
 function M.get(p, groups, styles)
 	return {
 		NavicText = { fg = p.color200 },
-		NavicSeparator = { fg = p.color400 },
+		NavicSeparator = { fg = p.color500 },
 
 		NavicIconsFile = { fg = p.color300 },
 		NavicIconsModule = { fg = p.violet },

@@ -31,7 +31,7 @@ function M.get(p, groups, styles)
 		["@string.sql"] = { fg = p.sage },
 		["@number.sql"] = { fg = p.violet },
 		["@boolean.sql"] = { fg = p.tide },
-		["@constant.builtin.sql"] = { fg = p.violet },
+		["@constant.builtin.sql"] = { fg = p.tide },
 		["@operator.sql"] = { fg = p.frost },
 		["@field.sql"] = { fg = p.color300 },
 		["@variable.member.sql"] = { fg = p.color300 },

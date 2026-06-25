@@ -60,7 +60,7 @@ function M.get(p, groups, styles)
 		["@number.css"] = { fg = p.violet },
 		["@function.css"] = { fg = p.primary },
 		["@keyword.css"] = { fg = p.crimson },
-		["@constant.css"] = { fg = p.violet },
+		["@constant.css"] = { fg = p.tide },
 		["@attribute.css"] = { fg = p.gold },
 		["@tag.attribute.css"] = { fg = p.gold },
 		["@punctuation.delimiter.css"] = { fg = p.color400 },

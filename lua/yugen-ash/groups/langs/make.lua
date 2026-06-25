@@ -14,7 +14,7 @@ function M.get(p, groups, styles)
 		makePreCondit = { fg = p.crimson },
 		makeDefine = { fg = p.crimson },
 		makeOverride = { fg = p.crimson },
-		makeInclude = { fg = p.violet },
+		makeInclude = { fg = p.crimson },
 		makeExport = { fg = p.crimson },
 		makeImplicit = { fg = p.primary },
 		makeSpecial = { fg = p.rust },

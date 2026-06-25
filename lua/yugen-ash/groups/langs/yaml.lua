@@ -38,7 +38,7 @@ function M.get(p, groups, styles)
 		["@string.yaml"] = { fg = p.sage },
 		["@boolean.yaml"] = { fg = p.tide },
 		["@number.yaml"] = { fg = p.violet },
-		["@constant.builtin.yaml"] = { fg = p.violet },
+		["@constant.builtin.yaml"] = { fg = p.tide },
 		["@type.yaml"] = { fg = p.crimson },
 		["@label.yaml"] = { fg = p.amber },
 		["@punctuation.delimiter.yaml"] = { fg = p.color400 },

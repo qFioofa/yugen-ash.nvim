@@ -45,7 +45,7 @@ function M.get(p, groups, styles)
 		rustConditional = { fg = p.tide },
 		rustRepeat = { fg = p.tide },
 		rustBoolean = { fg = p.tide },
-		rustConstant = { fg = p.violet },
+		rustConstant = { fg = p.tide },
 		rustDecNumber = { fg = p.violet },
 		rustHexNumber = { fg = p.violet },
 		rustOctNumber = { fg = p.violet },
@@ -54,7 +54,7 @@ function M.get(p, groups, styles)
 
 		-- Rust Treesitter
 		["@keyword.rust"] = { fg = p.crimson },
-		["@keyword.import.rust"] = { fg = p.violet },
+		["@keyword.import.rust"] = { fg = p.crimson },
 		["@keyword.function.rust"] = { fg = p.crimson },
 		["@keyword.return.rust"] = { fg = p.crimson },
 		["@type.rust"] = { fg = p.gold },
@@ -63,8 +63,8 @@ function M.get(p, groups, styles)
 		["@function.rust"] = { fg = p.primary },
 		["@function.builtin.rust"] = { fg = p.primary },
 		["@function.macro.rust"] = { fg = p.primary, style = "bold" },
-		["@constant.rust"] = { fg = p.violet },
-		["@constant.builtin.rust"] = { fg = p.violet },
+		["@constant.rust"] = { fg = p.tide },
+		["@constant.builtin.rust"] = { fg = p.tide },
 		["@variable.builtin.rust"] = { fg = p.color300, style = styles.italic },
 		["@module.rust"] = { fg = p.gold },
 		["@constructor.rust"] = { fg = p.primary },

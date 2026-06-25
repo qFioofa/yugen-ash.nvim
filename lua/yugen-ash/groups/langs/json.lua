@@ -25,7 +25,7 @@ function M.get(p, groups, styles)
 		["@string.json"] = { fg = p.sage },
 		["@number.json"] = { fg = p.violet },
 		["@boolean.json"] = { fg = p.tide },
-		["@constant.builtin.json"] = { fg = p.violet },
+		["@constant.builtin.json"] = { fg = p.tide },
 		["@punctuation.bracket.json"] = { fg = p.color400 },
 		["@punctuation.delimiter.json"] = { fg = p.color400 },
 		["@string.escape.json"] = { fg = p.rust },

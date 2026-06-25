@@ -6,7 +6,7 @@ function M.get(p, groups, styles)
 	return {
 		-- Legacy java.vim syntax groups
 		javaExternal = { fg = p.violet },
-		javaImport = { fg = p.violet },
+		javaImport = { fg = p.crimson },
 		javaClassDecl = { fg = p.crimson },
 		javaMethodDecl = { fg = p.crimson },
 		javaScopeDecl = { fg = p.crimson },
@@ -19,7 +19,7 @@ function M.get(p, groups, styles)
 		javaType = { fg = p.gold },
 		javaTypedef = { fg = p.gold },
 		javaClassPrimitive = { fg = p.amber },
-		javaConstant = { fg = p.violet },
+		javaConstant = { fg = p.tide },
 		javaBoolean = { fg = p.tide },
 		javaNumber = { fg = p.violet },
 		javaString = { fg = p.sage },
@@ -38,14 +38,14 @@ function M.get(p, groups, styles)
 
 		-- Java Treesitter
 		["@keyword.java"] = { fg = p.crimson },
-		["@keyword.import.java"] = { fg = p.violet },
+		["@keyword.import.java"] = { fg = p.crimson },
 		["@keyword.function.java"] = { fg = p.crimson },
 		["@type.java"] = { fg = p.gold },
 		["@type.builtin.java"] = { fg = p.amber },
 		["@function.java"] = { fg = p.primary },
 		["@function.builtin.java"] = { fg = p.primary },
-		["@constant.java"] = { fg = p.violet },
-		["@constant.builtin.java"] = { fg = p.violet },
+		["@constant.java"] = { fg = p.tide },
+		["@constant.builtin.java"] = { fg = p.tide },
 		["@variable.builtin.java"] = { fg = p.color300 },
 		["@attribute.java"] = { fg = p.amber, style = styles.italic },
 		["@annotation.java"] = { fg = p.amber, style = styles.italic },

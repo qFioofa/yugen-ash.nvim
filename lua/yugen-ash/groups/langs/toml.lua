@@ -26,7 +26,7 @@ function M.get(p, groups, styles)
 		["@string.toml"] = { fg = p.sage },
 		["@boolean.toml"] = { fg = p.tide },
 		["@number.toml"] = { fg = p.violet },
-		["@constant.builtin.toml"] = { fg = p.violet },
+		["@constant.builtin.toml"] = { fg = p.tide },
 		["@punctuation.delimiter.toml"] = { fg = p.color400 },
 		["@punctuation.bracket.toml"] = { fg = p.color400 },
 		["@comment.toml"] = { fg = p.color400 },

@@ -44,7 +44,7 @@ function M.get(p, groups, styles)
 
 		-- C# Treesitter
 		["@keyword.c_sharp"] = { fg = p.crimson },
-		["@keyword.import.c_sharp"] = { fg = p.violet },
+		["@keyword.import.c_sharp"] = { fg = p.crimson },
 		["@keyword.function.c_sharp"] = { fg = p.crimson },
 		["@keyword.return.c_sharp"] = { fg = p.crimson },
 		["@type.c_sharp"] = { fg = p.gold },
@@ -52,8 +52,8 @@ function M.get(p, groups, styles)
 		["@type.definition.c_sharp"] = { fg = p.gold },
 		["@function.c_sharp"] = { fg = p.primary },
 		["@function.builtin.c_sharp"] = { fg = p.primary },
-		["@constant.c_sharp"] = { fg = p.violet },
-		["@constant.builtin.c_sharp"] = { fg = p.violet },
+		["@constant.c_sharp"] = { fg = p.tide },
+		["@constant.builtin.c_sharp"] = { fg = p.tide },
 		["@variable.builtin.c_sharp"] = { fg = p.color300 },
 		["@attribute.c_sharp"] = { fg = p.amber, style = styles.italic },
 		["@constructor.c_sharp"] = { fg = p.primary },
