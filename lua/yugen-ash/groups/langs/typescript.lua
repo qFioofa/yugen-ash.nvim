@@ -46,6 +46,8 @@ function M.get(p, groups, styles)
 		["@keyword.import.typescript"] = { fg = p.crimson },
 		["@keyword.export.typescript"] = { fg = p.crimson },
 		["@keyword.function.typescript"] = { fg = p.crimson },
+		["@keyword.coroutine.typescript"] = { fg = p.seafoam },
+		["@lsp.typemod.variable.readonly.typescript"] = { link = "@variable" },
 		["@function.typescript"] = { fg = p.primary },
 		["@function.builtin.typescript"] = { fg = p.primary },
 		["@constructor.typescript"] = { fg = p.primary },

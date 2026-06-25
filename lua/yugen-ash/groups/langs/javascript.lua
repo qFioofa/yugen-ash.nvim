@@ -52,6 +52,8 @@ function M.get(p, groups, styles)
 		["@keyword.import.javascript"] = { fg = p.crimson },
 		["@keyword.export.javascript"] = { fg = p.crimson },
 		["@keyword.function.javascript"] = { fg = p.crimson },
+		["@keyword.coroutine.javascript"] = { fg = p.seafoam },
+		["@lsp.typemod.variable.readonly.javascript"] = { link = "@variable" },
 		["@function.javascript"] = { fg = p.primary },
 		["@function.builtin.javascript"] = { fg = p.primary },
 		["@constructor.javascript"] = { fg = p.primary },
