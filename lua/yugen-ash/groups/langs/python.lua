@@ -52,7 +52,7 @@ function M.get(p, groups, styles)
 		["@function.call.python"] = { fg = p.primary },
 		["@type.python"] = { fg = p.gold },
 		["@type.builtin.python"] = { fg = p.amber },
-		["@constant.python"] = { fg = p.tide },
+		["@constant.python"] = { fg = p.violet, style = "bold" },
 		["@constant.builtin.python"] = { fg = p.tide },
 		["@variable.builtin.python"] = { fg = p.color300, style = styles.italic },
 		["@variable.member.python"] = { fg = p.color200 },

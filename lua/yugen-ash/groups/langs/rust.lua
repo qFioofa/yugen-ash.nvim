@@ -63,7 +63,7 @@ function M.get(p, groups, styles)
 		["@function.rust"] = { fg = p.primary },
 		["@function.builtin.rust"] = { fg = p.primary },
 		["@function.macro.rust"] = { fg = p.primary, style = "bold" },
-		["@constant.rust"] = { fg = p.tide },
+		["@constant.rust"] = { fg = p.violet, style = "bold" },
 		["@constant.builtin.rust"] = { fg = p.tide },
 		["@variable.builtin.rust"] = { fg = p.color300, style = styles.italic },
 		["@module.rust"] = { fg = p.gold },

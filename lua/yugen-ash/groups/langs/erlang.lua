@@ -47,7 +47,7 @@ function M.get(p, groups, styles)
 		["@function.builtin.erlang"] = { fg = p.primary },
 		["@module.erlang"] = { fg = p.gold },
 		["@type.erlang"] = { fg = p.gold },
-		["@constant.erlang"] = { fg = p.tide },
+		["@constant.erlang"] = { fg = p.violet, style = "bold" },
 		["@string.special.symbol.erlang"] = { fg = p.seafoam },
 		["@variable.erlang"] = { fg = p.color200 },
 		["@variable.member.erlang"] = { fg = p.color300 },

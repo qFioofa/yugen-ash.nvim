@@ -40,7 +40,7 @@ function M.get(p, groups, styles)
 		["@preproc.c"] = { fg = p.crimson },
 		["@preproc.define.c"] = { fg = p.violet, style = "bold" },
 		["@preproc.include.c"] = { fg = p.crimson },
-		["@constant.c"] = { fg = p.tide },
+		["@constant.c"] = { fg = p.violet, style = "bold" },
 		["@macro.c"] = { fg = p.violet, style = "bold" },
 		["@structure.c"] = { fg = p.crimson },
 		["@union.c"] = { fg = p.crimson },

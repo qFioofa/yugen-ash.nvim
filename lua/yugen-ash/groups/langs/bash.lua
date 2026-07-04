@@ -51,7 +51,7 @@ function M.get(p, groups, styles)
 		["@string.special.path.bash"] = { fg = p.sage },
 		["@operator.bash"] = { fg = p.frost },
 		["@punctuation.special.bash"] = { fg = p.coral },
-		["@constant.bash"] = { fg = p.violet },
+		["@constant.bash"] = { fg = p.violet, style = "bold" },
 		["@parameter.bash"] = { fg = p.amber },
 	}
 end

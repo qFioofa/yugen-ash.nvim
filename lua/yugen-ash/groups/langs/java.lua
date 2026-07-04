@@ -44,7 +44,7 @@ function M.get(p, groups, styles)
 		["@type.builtin.java"] = { fg = p.amber },
 		["@function.java"] = { fg = p.primary },
 		["@function.builtin.java"] = { fg = p.primary },
-		["@constant.java"] = { fg = p.tide },
+		["@constant.java"] = { fg = p.violet, style = "bold" },
 		["@constant.builtin.java"] = { fg = p.tide },
 		["@variable.builtin.java"] = { fg = p.color300 },
 		["@attribute.java"] = { fg = p.amber, style = styles.italic },

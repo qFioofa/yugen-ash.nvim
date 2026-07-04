@@ -36,7 +36,7 @@ function M.get(p, groups, styles)
 		["@type.proto"] = { fg = p.gold },
 		["@type.builtin.proto"] = { fg = p.amber },
 		["@type.definition.proto"] = { fg = p.gold },
-		["@constant.proto"] = { fg = p.tide },
+		["@constant.proto"] = { fg = p.violet, style = "bold" },
 		["@constant.builtin.proto"] = { fg = p.tide },
 		["@field.proto"] = { fg = p.color300 },
 		["@variable.member.proto"] = { fg = p.color300 },

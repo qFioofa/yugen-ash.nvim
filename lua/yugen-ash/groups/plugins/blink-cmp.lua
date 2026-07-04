@@ -43,7 +43,7 @@ function M.get(p, groups, styles)
 		BlinkCmpKindReference = { fg = p.tide },
 		BlinkCmpKindFolder = { fg = p.crimson },
 		BlinkCmpKindEnumMember = { fg = p.violet },
-		BlinkCmpKindConstant = { fg = p.violet },
+		BlinkCmpKindConstant = { fg = p.violet, style = "bold" },
 		BlinkCmpKindStruct = { fg = p.crimson },
 		BlinkCmpKindEvent = { fg = p.gold },
 		BlinkCmpKindOperator = { fg = p.frost },

@@ -43,7 +43,7 @@ function M.get(p, groups, styles)
 		["@type.powershell"] = { fg = p.gold },
 		["@variable.powershell"] = { fg = p.color200 },
 		["@variable.builtin.powershell"] = { fg = p.violet },
-		["@constant.powershell"] = { fg = p.tide },
+		["@constant.powershell"] = { fg = p.violet, style = "bold" },
 		["@constant.builtin.powershell"] = { fg = p.tide },
 		["@string.powershell"] = { fg = p.sage },
 		["@operator.powershell"] = { fg = p.frost },

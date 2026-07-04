@@ -46,7 +46,7 @@ function M.get(p, groups, styles)
 		["@type.builtin.kotlin"] = { fg = p.amber },
 		["@function.kotlin"] = { fg = p.primary },
 		["@function.builtin.kotlin"] = { fg = p.primary },
-		["@constant.kotlin"] = { fg = p.tide },
+		["@constant.kotlin"] = { fg = p.violet, style = "bold" },
 		["@constant.builtin.kotlin"] = { fg = p.tide },
 		["@variable.builtin.kotlin"] = { fg = p.color300 },
 		["@attribute.kotlin"] = { fg = p.amber, style = styles.italic },
