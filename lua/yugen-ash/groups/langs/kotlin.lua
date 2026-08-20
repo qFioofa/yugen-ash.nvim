@@ -48,10 +48,10 @@ function M.get(p, groups, styles)
 		["@function.builtin.kotlin"] = { fg = p.primary },
 		["@constant.kotlin"] = { fg = p.violet, style = "bold" },
 		["@constant.builtin.kotlin"] = { fg = p.tide },
-		["@variable.builtin.kotlin"] = { fg = p.color300 },
+		["@variable.builtin.kotlin"] = { fg = p.violet },
 		["@attribute.kotlin"] = { fg = p.amber, style = styles.italic },
 		["@annotation.kotlin"] = { fg = p.amber, style = styles.italic },
-		["@constructor.kotlin"] = { fg = p.primary },
+		["@constructor.kotlin"] = { fg = p.gold },
 		["@label.kotlin"] = { fg = p.seafoam },
 		["@punctuation.special.kotlin"] = { fg = p.coral },
 	}

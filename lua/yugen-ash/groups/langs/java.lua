@@ -46,10 +46,10 @@ function M.get(p, groups, styles)
 		["@function.builtin.java"] = { fg = p.primary },
 		["@constant.java"] = { fg = p.violet, style = "bold" },
 		["@constant.builtin.java"] = { fg = p.tide },
-		["@variable.builtin.java"] = { fg = p.color300 },
+		["@variable.builtin.java"] = { fg = p.violet },
 		["@attribute.java"] = { fg = p.amber, style = styles.italic },
 		["@annotation.java"] = { fg = p.amber, style = styles.italic },
-		["@constructor.java"] = { fg = p.primary },
+		["@constructor.java"] = { fg = p.gold },
 		["@property.java"] = { fg = p.color300 },
 	}
 end

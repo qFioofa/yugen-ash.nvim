@@ -6,7 +6,7 @@ function M.get(p, groups, styles)
 	return {
 		["@variable"] = { fg = p.color200 },
 		["@property"] = { fg = p.color300 },
-		["@variable.builtin"] = { fg = p.color300 },
+		["@variable.builtin"] = { fg = p.violet },
 		["@variable.parameter"] = { fg = p.color200, style = styles.italic },
 		["@variable.member"] = { fg = p.color500 },
 		["@variable.object.property"] = { fg = p.color500 },

@@ -54,9 +54,9 @@ function M.get(p, groups, styles)
 		["@function.builtin.c_sharp"] = { fg = p.primary },
 		["@constant.c_sharp"] = { fg = p.violet, style = "bold" },
 		["@constant.builtin.c_sharp"] = { fg = p.tide },
-		["@variable.builtin.c_sharp"] = { fg = p.color300 },
+		["@variable.builtin.c_sharp"] = { fg = p.violet },
 		["@attribute.c_sharp"] = { fg = p.amber, style = styles.italic },
-		["@constructor.c_sharp"] = { fg = p.primary },
+		["@constructor.c_sharp"] = { fg = p.gold },
 		["@property.c_sharp"] = { fg = p.color300 },
 		["@punctuation.special.c_sharp"] = { fg = p.coral },
 	}

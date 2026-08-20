@@ -46,7 +46,7 @@ function M.get(p, groups, styles)
 		["@function.builtin.zig"] = { fg = p.primary },
 		["@constant.zig"] = { fg = p.violet, style = "bold" },
 		["@constant.builtin.zig"] = { fg = p.tide },
-		["@variable.builtin.zig"] = { fg = p.color300 },
+		["@variable.builtin.zig"] = { fg = p.violet },
 		["@field.zig"] = { fg = p.color300 },
 		["@label.zig"] = { fg = p.seafoam },
 		["@string.escape.zig"] = { fg = p.rust },

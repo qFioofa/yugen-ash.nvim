@@ -38,7 +38,7 @@ function M.get(p, groups, styles)
 		pythonEscape = { fg = p.rust },
 		pythonComment = { fg = p.color400 },
 		pythonDocstring = { fg = p.color400 },
-		pythonSelf = { fg = p.color300, style = styles.italic },
+		pythonSelf = { fg = p.violet, style = styles.italic },
 		pythonAttribute = { fg = p.color200 },
 		pythonDot = { fg = p.color400 },
 
@@ -54,12 +54,12 @@ function M.get(p, groups, styles)
 		["@type.builtin.python"] = { fg = p.amber },
 		["@constant.python"] = { fg = p.violet, style = "bold" },
 		["@constant.builtin.python"] = { fg = p.tide },
-		["@variable.builtin.python"] = { fg = p.color300, style = styles.italic },
+		["@variable.builtin.python"] = { fg = p.violet, style = styles.italic },
 		["@variable.member.python"] = { fg = p.color200 },
 		["@property.python"] = { fg = p.color200 },
 		["@variable.object.property.python"] = { fg = p.color200 },
 		["@attribute.python"] = { fg = p.amber, style = styles.italic },
-		["@constructor.python"] = { fg = p.primary },
+		["@constructor.python"] = { fg = p.gold },
 		["@string.documentation.python"] = { fg = p.color400 },
 		["@punctuation.special.python"] = { fg = p.coral },
 	}

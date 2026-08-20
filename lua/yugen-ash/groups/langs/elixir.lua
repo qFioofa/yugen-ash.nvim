@@ -41,7 +41,7 @@ function M.get(p, groups, styles)
 		elixirBoolean = { fg = p.tide },
 		elixirNil = { fg = p.violet },
 		elixirNumber = { fg = p.violet },
-		elixirSelf = { fg = p.color300 },
+		elixirSelf = { fg = p.violet },
 		elixirUnusedVariable = { fg = p.color400 },
 		elixirModuleAttribute = { fg = p.amber },
 		elixirDocTest = { fg = p.color400 },
