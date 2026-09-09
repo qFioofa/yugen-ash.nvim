@@ -20,6 +20,7 @@ local modules = {
 	"yugen-ash.groups.langs.svelte",
 	"yugen-ash.groups.langs.zig",
 	"yugen-ash.groups.langs.elixir",
+	"yugen-ash.groups.langs.ruby",
 	"yugen-ash.groups.langs.java",
 	"yugen-ash.groups.langs.bash",
 	"yugen-ash.groups.langs.python",
