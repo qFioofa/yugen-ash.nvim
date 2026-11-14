@@ -8,7 +8,6 @@ function M.get(p, groups, styles)
 		LspReferenceRead = { bg = p.color400 },
 		LspReferenceWrite = { bg = p.color800 },
 		LspCodeLens = { fg = p.color400 },
-		LspSignatureActiveParameter = { bg = p.placeholder, style = "bold" },
 		lspTypeProperty = { fg = p.color500 },
 		lspTypeParameter = { fg = p.color500, style = styles.italic },
 		lspTypeVariable = { fg = p.color500 },

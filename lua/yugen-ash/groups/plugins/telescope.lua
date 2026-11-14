@@ -15,6 +15,22 @@ function M.get(p, groups, styles)
 		TelescopeMatching = { fg = p.primary },
 		TelescopeSelectionCaret = { fg = p.primary },
 		TelescopePromptPrefix = { fg = p.primary },
+
+		-- Tree-sitter-based preview highlights (also used by telescope-ui-select)
+		TelescopeResultsComment = { fg = p.color400 },
+		TelescopeResultsSpecialComment = { fg = p.color300 },
+		TelescopeResultsIdentifier = { fg = p.color200 },
+		TelescopeResultsConstant = { fg = p.violet },
+		TelescopeResultsFunction = { fg = p.primary },
+		TelescopeResultsMethod = { fg = p.primary },
+		TelescopeResultsClass = { fg = p.gold },
+		TelescopeResultsStruct = { fg = p.gold },
+		TelescopeResultsField = { fg = p.color300 },
+		TelescopeResultsVariable = { fg = p.color200 },
+		TelescopeResultsNumber = { fg = p.violet },
+		TelescopeResultsDiffAdd = { fg = p.sage },
+		TelescopeResultsDiffChange = { fg = p.warning },
+		TelescopeResultsDiffDelete = { fg = p.crimson },
 	}
 end
 

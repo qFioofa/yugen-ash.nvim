@@ -63,6 +63,15 @@ local modules = {
 	"yugen-ash.groups.plugins.mini",
 	"yugen-ash.groups.plugins.render-markdown",
 	"yugen-ash.groups.plugins.blink-cmp",
+	"yugen-ash.groups.plugins.snacks",
+	"yugen-ash.groups.plugins.hover",
+	"yugen-ash.groups.plugins.toggleterm",
+	"yugen-ash.groups.plugins.lspsaga",
+	"yugen-ash.groups.plugins.lsp_signature",
+	"yugen-ash.groups.plugins.luasnip",
+	"yugen-ash.groups.plugins.treesitter-context",
+	"yugen-ash.groups.plugins.lazygit",
+	"yugen-ash.groups.plugins.fidget",
 	"yugen-ash.groups.terminal",
 }
 
