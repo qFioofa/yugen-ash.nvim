@@ -5,6 +5,7 @@ A minimal dark theme for Neovim.
 ## Installation
 
 **lazy.nvim:**
+
 ```lua
 {
     "qfioofa/yugen-ash.nvim",
@@ -18,6 +19,7 @@ A minimal dark theme for Neovim.
 ```
 
 **packer.nvim:**
+
 ```lua
 use { "qfioofa/yugen-ash.nvim" }
 ```
@@ -50,30 +52,39 @@ the same color everywhere, and each language file just maps its syntax/
 Treesitter groups onto these roles. This keeps every language consistent and
 makes related concepts visually distinct.
 
-| Color | Role |
-|-------|------|
-| `crimson` | Keywords, declarations, storage/modifiers, structures |
-| `tide` | Control flow (conditional, loop, case), booleans, exceptions |
-| `frost` | Operators (kept distinct from control-flow keywords) |
-| `violet` | Imports/includes, numbers, constants, macros, `null`/`nil`/`None` |
-| `sage` | Strings, characters, markup tags |
-| `primary` | All functions — names, calls, builtins, methods, macros and constructors; headings |
-| `gold` | Types, classes/structs/enums |
-| `amber` | Builtin types, annotations/decorators/attributes |
-| `seafoam` | Labels, atoms/symbols |
-| `coral` | Interpolation, regex, special punctuation |
-| `rust` | Escape sequences and special characters (kept distinct from types) |
-| `color200` | Plain text and identifiers |
-| `color300` | Object properties and members |
-| `color400` | Comments and punctuation/delimiters |
+| Color      | Role                                                                                          |
+| ---------- | --------------------------------------------------------------------------------------------- |
+| `crimson`  | Keywords, declarations, storage/modifiers, structures, imports/includes                       |
+| `tide`     | Control flow (conditional, loop, case, exception), booleans, all constants                    |
+| `frost`    | Operators (kept distinct from control-flow keywords)                                          |
+| `violet`   | Numbers, builtin variables, `null`/`nil`/`None`                                               |
+| `sage`     | Strings, characters, markup tags                                                              |
+| `primary`  | All functions — names, calls, builtins, methods, macros and constructors; headings; link text |
+| `gold`     | Types, classes/structs/enums, `@type.definition`                                              |
+| `amber`    | Builtin types, annotations/decorators/attributes                                              |
+| `seafoam`  | Labels, atoms/symbols, staged git state                                                       |
+| `coral`    | Interpolation, regexp, special punctuation, renamed git state                                 |
+| `rust`     | Escape sequences and special characters (kept distinct from types)                            |
+| `color200` | Plain text and variables                                                                      |
+| `color300` | Object properties, members and fields                                                         |
+| `color400` | Comments and punctuation/delimiters                                                           |
+| `color500` | Muted/inactive text                                                                           |
 
-Two roles are deliberately separated from neighbours they used to share:
+Three roles are deliberately separated from neighbours they used to share:
 **operators** use `frost` so they no longer blend into the `tide` control-flow
-keywords, and **escapes** use `rust` so they stand apart from `gold` types.
+keywords, **escapes** use `rust` so they stand apart from `gold` types, and
+**constants** use `tide` while **numbers** use `violet`. Imports are part of
+the keyword family (`crimson`), and `@type.definition` follows types (`gold`).
 LSP semantic tokens (`@lsp.type.*` / `@lsp.typemod.*`) are linked to the
 matching Treesitter captures, so they follow the same roles whether or not a
 server provides them. All variants (`main`, `rich`, `muted`, `vibrant`,
 `light`) share this role mapping and only swap the underlying hex values.
+
+UI chrome is driven by the live `setup.groups` tokens: `background`, `panel`,
+`statusline`, `border`, `comment`, `punctuation`, `link`, `error`/`warn`/
+`info`/`hint`, `git_*`, and `headings.h1..h6`. Floats and menus use
+`groups.panel`, borders use `groups.border`, and statusline/tabline use
+`groups.statusline`.
 
 ## Commands
 
@@ -82,10 +93,12 @@ reloaded on subsequent startups. The cache is keyed by your config and
 invalidated automatically when the theme sources change, so you normally never
 need to touch it.
 
-| Command | Description |
-|---------|-------------|
-| `:YugenAshClean` | Remove the compiled cache. |
-| `:YugenAshCompile` | Rebuild the cache and reload the colorscheme. |
+| Command                    | Description                                                             |
+| -------------------------- | ----------------------------------------------------------------------- |
+| `:YugenAshClean`           | Remove the compiled cache.                                              |
+| `:YugenAshCompile`         | Rebuild the cache and reload the colorscheme.                           |
+| `:YugenAshInspect [group]` | Inspect the cursor position (or a group) and print the effective color. |
+| `:YugenAshInspect!`        | Same as above, including extmarks without a highlight group.            |
 
 Tips:
 
@@ -94,22 +107,30 @@ Tips:
   the cache and rebuild on the next `colorscheme yugen-ash`.
 - To disable caching entirely, set `compile = false` in `setup`.
 - The same commands are available from Lua:
-  ```lua
-  require("yugen-ash").clean() -- drop the cache
-  ```
+    ```lua
+    require("yugen-ash").clean() -- drop the cache
+    ```
+
+## Testing language highlights
+
+Each language has a showcase fixture under `tests/fixtures/langs/` that
+demonstrates the groups declared by its module plus the common base captures.
+See `tests/README.md` for the full workflow and debug commands.
+
+```bash
+# Headless coverage check
+scripts/test-highlights.sh ruby
+
+# Open the fixture with the theme and Treesitter
+nvim -u tests/minimal_init.lua tests/fixtures/langs/ruby.rb
+```
 
 ## Preview
-
-| Lua | Svelte |
-|-----|--------|
-| ![Lua](./images/lua.png) | ![Svelte](./images/svelte.png) |
-
-| Bash | Elixir |
-|------|--------|
-| ![Bash](./images/bash.png) | ![Elixir](./images/elixir.png) |
 
 ## Credits
 
 Based on:
+
 - [yugen.nvim](https://github.com/bettervim/yugen.nvim)
 - [ash.nvim](https://github.com/drewxs/ash.nvim)
+

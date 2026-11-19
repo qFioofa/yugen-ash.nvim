@@ -5,12 +5,12 @@ local M = {}
 
 function M.get(p, groups, styles)
 	return {
-		RenderMarkdownH1 = { fg = p.primary, style = "bold" },
-		RenderMarkdownH2 = { fg = p.coral, style = "bold" },
-		RenderMarkdownH3 = { fg = p.gold, style = "bold" },
-		RenderMarkdownH4 = { fg = p.crimson, style = "bold" },
-		RenderMarkdownH5 = { fg = p.violet, style = "bold" },
-		RenderMarkdownH6 = { fg = p.tide, style = "bold" },
+		RenderMarkdownH1 = { fg = p.primary, style = styles.bold },
+		RenderMarkdownH2 = { fg = p.coral, style = styles.bold },
+		RenderMarkdownH3 = { fg = p.gold, style = styles.bold },
+		RenderMarkdownH4 = { fg = p.crimson, style = styles.bold },
+		RenderMarkdownH5 = { fg = p.violet, style = styles.bold },
+		RenderMarkdownH6 = { fg = p.tide, style = styles.bold },
 		RenderMarkdownH1Bg = { bg = p.color600 },
 		RenderMarkdownH2Bg = { bg = p.color600 },
 		RenderMarkdownH3Bg = { bg = p.color600 },

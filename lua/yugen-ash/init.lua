@@ -21,34 +21,35 @@ local config = {
 
 	groups = {
 		background = "color700",
-		panel = "color800",
+		panel = "color700",
+		statusline = "color800",
 		border = "color600",
-		comment = "color500",
-		link = "color200",
-		punctuation = "color500",
+		comment = "color400",
+		link = "primary",
+		punctuation = "color400",
 
 		error = "error",
 		hint = "success",
-		info = "color200",
+		info = "tide",
 		warn = "warning",
 
 		git_add = "sage",
-		git_change = "color600",
+		git_change = "warning",
 		git_delete = "crimson",
 		git_dirty = "color200",
-		git_ignore = "color600",
-		git_merge = "color200",
-		git_rename = "color200",
-		git_stage = "color200",
+		git_ignore = "color500",
+		git_merge = "tide",
+		git_rename = "coral",
+		git_stage = "seafoam",
 		git_text = "color200",
 
 		headings = {
-			h1 = "color400",
-			h2 = "color400",
-			h3 = "color400",
-			h4 = "color400",
-			h5 = "color400",
-			h6 = "color400",
+			h1 = "primary",
+			h2 = "coral",
+			h3 = "gold",
+			h4 = "crimson",
+			h5 = "violet",
+			h6 = "tide",
 		},
 	},
 	highlight_groups = {},
@@ -68,6 +69,14 @@ function M.setup(opts)
 		M.colorscheme()
 		vim.notify("yugen-ash: recompiled", vim.log.levels.INFO)
 	end, { desc = "Rebuild the yugen-ash compiled cache and reload" })
+
+	vim.api.nvim_create_user_command("YugenAshInspect", function(cmd)
+		require("yugen-ash.inspect").show(cmd.args, cmd.bang)
+	end, {
+		nargs = "?",
+		bang = true,
+		desc = "Inspect the highlight group and effective color at the cursor",
+	})
 end
 
 -- Exposes the resolved config so external integrations (e.g. the lualine

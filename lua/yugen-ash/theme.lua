@@ -72,6 +72,7 @@ local modules = {
 	"yugen-ash.groups.plugins.treesitter-context",
 	"yugen-ash.groups.plugins.lazygit",
 	"yugen-ash.groups.plugins.fidget",
+	"yugen-ash.groups.plugins.physical-keyboard",
 	"yugen-ash.groups.terminal",
 }
 
@@ -95,17 +96,31 @@ local function resolve_groups(groups, p)
 	return resolved
 end
 
-function M.get(config)
+-- Resolve the palette, user-facing group tokens and style tokens for a config.
+-- Shared by M.get and external tooling (the language fixture coverage check)
+-- so group modules can be evaluated without duplicating this logic.
+function M.context(config)
 	local variant = config.variant or "main"
 	local p = require("yugen-ash.palette").get(variant)
 	local groups = resolve_groups(config.groups or {}, p)
 	local styles = {
 		italic = config.disable_italics and p.none or "italic",
+		bold = "bold",
 		vert_split = config.bold_vert_split and groups.border or p.none,
 		background = config.transparent and p.none or groups.background,
-		float_background = config.transparent_statusline and p.none or groups.panel,
+		panel = config.transparent and p.none or groups.panel,
+		statusline = (config.transparent or config.transparent_statusline) and p.none or groups.statusline,
 	}
-	styles.nc_background = (config.dim_nc_background and not config.transparent and groups.panel) or styles.background
+	styles.nc_background = (config.dim_nc_background and not config.transparent and groups.statusline)
+		or styles.background
+	-- Deprecated alias kept for external integrations that still read it.
+	styles.float_background = styles.statusline
+
+	return p, groups, styles
+end
+
+function M.get(config)
+	local p, groups, styles = M.context(config)
 
 	local theme = {}
 	for _, name in ipairs(modules) do

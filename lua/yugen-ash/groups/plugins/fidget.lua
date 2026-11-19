@@ -7,7 +7,7 @@ function M.get(p, groups, styles)
 		FidgetNoBlend = { bg = p.color700 },
 		-- Kept for older Fidget versions; the current release uses Comment for
 		-- notification text, which the syntax module already themes.
-		FidgetTitle = { fg = p.primary, style = "bold" },
+		FidgetTitle = { fg = p.primary, style = styles.bold },
 		FidgetTask = { fg = p.color300 },
 	}
 end

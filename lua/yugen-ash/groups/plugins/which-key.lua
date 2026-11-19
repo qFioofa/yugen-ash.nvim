@@ -9,10 +9,10 @@ function M.get(p, groups, styles)
 		WhichKeyDesc = { fg = p.color200 },
 		WhichKeySeparator = { fg = p.color500 },
 		WhichKeyValue = { fg = p.color400 },
-		WhichKeyNormal = { fg = p.color200, bg = p.color700 },
-		WhichKeyFloat = { bg = p.color700 },
+		WhichKeyNormal = { fg = p.color200, bg = styles.panel },
+		WhichKeyFloat = { bg = styles.panel },
 		WhichKeyBorder = { fg = groups.border },
-		WhichKeyTitle = { fg = p.color200, bg = p.color700 },
+		WhichKeyTitle = { fg = p.color200, bg = styles.panel },
 	}
 end
 

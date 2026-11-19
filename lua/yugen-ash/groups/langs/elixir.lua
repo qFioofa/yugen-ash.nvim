@@ -54,7 +54,7 @@ function M.get(p, groups, styles)
 		["@function.call.elixir"] = { fg = p.primary },
 		["@module.elixir"] = { fg = p.gold },
 		["@type.elixir"] = { fg = p.gold },
-		["@constant.elixir"] = { fg = p.seafoam },
+		["@constant.elixir"] = { fg = p.tide },
 		["@constant.builtin.elixir"] = { fg = p.tide },
 		["@string.special.symbol.elixir"] = { fg = p.seafoam },
 		["@string.special.elixir"] = { fg = p.coral },

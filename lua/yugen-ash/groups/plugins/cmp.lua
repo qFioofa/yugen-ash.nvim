@@ -6,8 +6,8 @@ function M.get(p, groups, styles)
 	return {
 		CmpItemAbbr = { fg = p.color200 },
 		CmpItemAbbrDeprecated = { fg = p.color400, style = "strikethrough" },
-		CmpItemAbbrMatch = { fg = p.primary, style = "bold" },
-		CmpItemAbbrMatchFuzzy = { fg = p.primary, style = "bold" },
+		CmpItemAbbrMatch = { fg = p.primary, style = styles.bold },
+		CmpItemAbbrMatchFuzzy = { fg = p.primary, style = styles.bold },
 		CmpItemMenu = { fg = p.color400 },
 		CmpItemKind = { fg = p.primary },
 
@@ -31,8 +31,8 @@ function M.get(p, groups, styles)
 		CmpItemKindFile = { fg = p.color300 },
 		CmpItemKindReference = { fg = p.tide },
 		CmpItemKindFolder = { fg = p.crimson },
-		CmpItemKindEnumMember = { fg = p.violet },
-		CmpItemKindConstant = { fg = p.violet, style = "bold" },
+		CmpItemKindEnumMember = { fg = p.tide },
+		CmpItemKindConstant = { fg = p.tide },
 		CmpItemKindStruct = { fg = p.crimson },
 		CmpItemKindEvent = { fg = p.gold },
 		CmpItemKindOperator = { fg = p.frost },

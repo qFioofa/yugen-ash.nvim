@@ -64,7 +64,7 @@ function M.get(p, groups, styles)
 		["@variable.parameter.ruby"] = { fg = p.color200, style = styles.italic },
 		["@variable.member.ruby"] = { fg = p.color200 },
 		["@property.ruby"] = { fg = p.color300 },
-		["@constant.ruby"] = { fg = p.tide, style = "bold" },
+		["@constant.ruby"] = { fg = p.tide },
 		["@constant.builtin.ruby"] = { fg = p.tide },
 		["@string.special.symbol.ruby"] = { fg = p.rust },
 		["@string.regexp.ruby"] = { fg = p.coral },
@@ -72,7 +72,7 @@ function M.get(p, groups, styles)
 		["@attribute.ruby"] = { fg = p.amber, style = styles.italic },
 		["@operator.ruby"] = { fg = p.frost },
 		["@label.ruby"] = { fg = p.seafoam },
-		["@constructor.ruby"] = { fg = p.gold, style = "bold" },
+		["@constructor.ruby"] = { fg = p.gold, style = styles.bold },
 		["@comment.documentation.ruby"] = { fg = p.color400 },
 
 		["@lsp.type.variable.ruby"] = { link = "@variable" },

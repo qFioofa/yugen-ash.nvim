@@ -5,25 +5,25 @@ local M = {}
 function M.get(p, groups, styles)
 	return {
 		-- mini.statusline
-		MiniStatuslineModeNormal = { fg = p.color800, bg = p.primary, style = "bold" },
-		MiniStatuslineModeInsert = { fg = p.color800, bg = p.sage, style = "bold" },
-		MiniStatuslineModeVisual = { fg = p.color800, bg = p.violet, style = "bold" },
-		MiniStatuslineModeReplace = { fg = p.color800, bg = p.crimson, style = "bold" },
-		MiniStatuslineModeCommand = { fg = p.color800, bg = p.gold, style = "bold" },
-		MiniStatuslineModeOther = { fg = p.color800, bg = p.tide, style = "bold" },
+		MiniStatuslineModeNormal = { fg = p.color800, bg = p.crimson, style = styles.bold },
+		MiniStatuslineModeInsert = { fg = p.color800, bg = p.success, style = styles.bold },
+		MiniStatuslineModeVisual = { fg = p.color800, bg = p.warning, style = styles.bold },
+		MiniStatuslineModeReplace = { fg = p.color800, bg = p.error, style = styles.bold },
+		MiniStatuslineModeCommand = { fg = p.color800, bg = p.amber, style = styles.bold },
+		MiniStatuslineModeOther = { fg = p.color800, bg = p.seafoam, style = styles.bold },
 		MiniStatuslineDevinfo = { fg = p.color200, bg = p.color600 },
-		MiniStatuslineFilename = { fg = p.color300, bg = p.color700 },
+		MiniStatuslineFilename = { fg = p.color300, bg = styles.statusline },
 		MiniStatuslineFileinfo = { fg = p.color200, bg = p.color600 },
-		MiniStatuslineInactive = { fg = p.color400, bg = p.color700 },
+		MiniStatuslineInactive = { fg = p.color400, bg = styles.statusline },
 
 		-- mini.tabline
-		MiniTablineCurrent = { fg = p.color200, bg = p.color600, style = "bold" },
-		MiniTablineVisible = { fg = p.color200, bg = p.color700 },
-		MiniTablineHidden = { fg = p.color400, bg = p.color700 },
-		MiniTablineModifiedCurrent = { fg = p.primary, bg = p.color600, style = "bold" },
-		MiniTablineModifiedVisible = { fg = p.primary, bg = p.color700 },
-		MiniTablineModifiedHidden = { fg = p.color400, bg = p.color700 },
-		MiniTablineFill = { bg = p.color800 },
+		MiniTablineCurrent = { fg = p.color200, bg = p.color600, style = styles.bold },
+		MiniTablineVisible = { fg = p.color200, bg = styles.panel },
+		MiniTablineHidden = { fg = p.color400, bg = styles.background },
+		MiniTablineModifiedCurrent = { fg = p.primary, bg = p.color600, style = styles.bold },
+		MiniTablineModifiedVisible = { fg = p.primary, bg = styles.panel },
+		MiniTablineModifiedHidden = { fg = p.color400, bg = styles.background },
+		MiniTablineFill = { bg = styles.statusline },
 
 		-- mini.cursorword
 		MiniCursorword = { bg = p.color600 },
@@ -34,16 +34,16 @@ function M.get(p, groups, styles)
 		MiniIndentscopePrefix = { fg = p.none },
 
 		-- mini.trailspace
-		MiniTrailspace = { bg = p.error },
+		MiniTrailspace = { bg = groups.error },
 
 		-- mini.files
-		MiniFilesNormal = { fg = p.color200, bg = p.color700 },
+		MiniFilesNormal = { fg = p.color200, bg = styles.panel },
 		MiniFilesBorder = { fg = groups.border },
 		MiniFilesTitle = { fg = p.color400 },
-		MiniFilesTitleFocused = { fg = p.primary, style = "bold" },
+		MiniFilesTitleFocused = { fg = p.primary, style = styles.bold },
 
 		-- mini.pick
-		MiniPickNormal = { fg = p.color200, bg = p.color700 },
+		MiniPickNormal = { fg = p.color200, bg = styles.panel },
 		MiniPickBorder = { fg = groups.border },
 		MiniPickMatchCurrent = { bg = p.color600 },
 		MiniPickMatchMarked = { fg = p.primary },

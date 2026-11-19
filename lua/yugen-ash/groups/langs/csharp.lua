@@ -52,7 +52,7 @@ function M.get(p, groups, styles)
 		["@type.definition.c_sharp"] = { fg = p.gold },
 		["@function.c_sharp"] = { fg = p.primary },
 		["@function.builtin.c_sharp"] = { fg = p.primary },
-		["@constant.c_sharp"] = { fg = p.violet, style = "bold" },
+		["@constant.c_sharp"] = { fg = p.tide },
 		["@constant.builtin.c_sharp"] = { fg = p.tide },
 		["@variable.builtin.c_sharp"] = { fg = p.violet },
 		["@attribute.c_sharp"] = { fg = p.amber, style = styles.italic },

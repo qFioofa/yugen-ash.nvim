@@ -1,0 +1,18 @@
+{
+	"$schema": "https://example.com/schema.json",
+	"name": "yugen-ash",
+	"version": 2,
+	"ratio": 3.14,
+	"exponent": 1e10,
+	"negative": -42,
+	"enabled": true,
+	"disabled": false,
+	"nothing": null,
+	"empty": {},
+	"tags": ["editor", "colorscheme"],
+	"nested": {
+		"key": "value",
+		"escaped": "line\nquote\"tab\tunicode\u00e9",
+		"url": "https://example.com/a?b=c"
+	}
+}

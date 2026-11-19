@@ -1,0 +1,68 @@
+/* yugen-ash highlight showcase — CSS (.css)
+ *
+ * Open with the theme:
+ *   nvim -u tests/minimal_init.lua tests/fixtures/langs/css.css
+ *   YUGEN_ASH_VARIANT=light nvim -u tests/minimal_init.lua tests/fixtures/langs/css.css
+ *
+ * Headless coverage check:
+ *   scripts/test-highlights.sh css
+ *
+ * Debug: :Inspect, :InspectTree, :YugenAshInspect, :hi <group>
+ */
+
+/* legacy syntax: cssComment */
+/* Treesitter: @comment */
+/* legacy syntax: cssTagName, cssClassName, cssClassNameDot, cssIdentifier */
+/* Treesitter: @type, @type.tag, @property.class, @property.id */
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+/* legacy syntax: cssPseudoClass, cssPseudoClassId, cssPseudoClassFn */
+a:hover,
+li:first-child,
+input:not([disabled]) {
+	text-decoration: underline;
+}
+
+/* legacy syntax: cssAttributeSelector, cssProp, cssAttr, cssAttrComma */
+/* legacy syntax: cssValueNumber, cssValueInteger, cssValueLength, cssValueAngle */
+/* legacy syntax: cssValueTime, cssColor, cssFunctionName, cssUnitDecorators */
+/* Treesitter: @attribute, @tag.attribute, @property, @number, @string */
+.card[data-state="active"],
+#main .card {
+	display: flex;
+	gap: 0.5rem;
+	width: 100px;
+	height: 50%;
+	margin: -2px 1em 0 0;
+	transform: rotate(45deg);
+	transition: opacity 200ms ease-in-out;
+	color: #ffbe89;
+	background: rgb(21, 21, 21);
+	content: "card";
+	font-weight: bold !important;
+}
+
+/* legacy syntax: cssAtRule, cssAtKeyword, cssMediaType, cssMediaKeyword */
+@media screen and (min-width: 768px) {
+	.card {
+		display: grid;
+	}
+}
+
+/* legacy syntax: cssURL, cssVendor, cssStringQ, cssStringQQ */
+@font-face {
+	font-family: "Showcase";
+	src: url("https://example.com/font.woff2") format("woff2");
+	-webkit-font-smoothing: antialiased;
+}
+
+/* legacy syntax: cssFunction, cssImportant */
+:root {
+	--accent: #ff9e8b;
+	--panel: rgba(0, 0, 0, 0.8);
+}

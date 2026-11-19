@@ -18,7 +18,7 @@ function M.get(p, groups, styles)
 	local theme = {}
 	for key, color in pairs(keywords) do
 		theme["TodoFg" .. key] = { fg = color }
-		theme["TodoBg" .. key] = { fg = p.color800, bg = color, style = "bold" }
+		theme["TodoBg" .. key] = { fg = p.color800, bg = color, style = styles.bold }
 		theme["TodoSign" .. key] = { fg = color }
 	end
 

@@ -1,0 +1,59 @@
+# yugen-ash highlight showcase — TOML (.toml)
+#
+# Open with the theme:
+#   nvim -u tests/minimal_init.lua tests/fixtures/langs/toml.toml
+#   YUGEN_ASH_VARIANT=light nvim -u tests/minimal_init.lua tests/fixtures/langs/toml.toml
+#
+# Headless coverage check:
+#   scripts/test-highlights.sh toml
+#
+# Debug: :Inspect, :InspectTree, :YugenAshInspect, :hi <group>
+
+# --- legacy syntax: tomlComment ---
+# --- Treesitter: @comment ---
+
+# --- legacy syntax: tomlKey, tomlKeyDq, tomlKeySq, tomlKeyValueArray ---
+# --- Treesitter: @property, @punctuation.delimiter ---
+title = "yugen-ash showcase"
+"quoted key" = "double quoted key"
+'single key' = 'single quoted key'
+array = [1, 2, 3]
+
+# --- legacy syntax: tomlString, tomlEscape ---
+# --- Treesitter: @string ---
+escaped = "tab\ttab below\nquote\"unicode\u00e9"
+literal = 'literal \n stays literal'
+multiline = """
+multi
+line
+"""
+multiline_literal = '''
+raw
+text
+'''
+
+# --- legacy syntax: tomlBoolean, tomlInteger, tomlFloat, tomlDate ---
+# --- Treesitter: @boolean, @number, @constant.builtin ---
+enabled = true
+disabled = false
+integer = 42
+negative = -7
+float = 3.14
+offset_date = 2026-11-16T10:00:00Z
+
+# --- legacy syntax: tomlTable, tomlTableArray, tomlDotInKey ---
+# --- Treesitter: @type, @property ---
+[table]
+key = "value"
+dotted.key = "dotted"
+
+[table.nested]
+other = 1
+
+[[items]]
+name = "one"
+
+[[items]]
+name = "two"
+
+inline = { a = 1, b = "two", c = true }

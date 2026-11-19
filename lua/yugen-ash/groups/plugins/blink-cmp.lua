@@ -11,7 +11,7 @@ function M.get(p, groups, styles)
 		BlinkCmpScrollBarGutter = { bg = p.color700 },
 		BlinkCmpLabel = { fg = p.color200 },
 		BlinkCmpLabelDeprecated = { fg = p.color400, style = "strikethrough" },
-		BlinkCmpLabelMatch = { fg = p.primary, style = "bold" },
+		BlinkCmpLabelMatch = { fg = p.primary, style = styles.bold },
 		BlinkCmpLabelDescription = { fg = p.color400 },
 		BlinkCmpLabelDetail = { fg = p.color400 },
 		BlinkCmpKind = { fg = p.primary },
@@ -20,7 +20,7 @@ function M.get(p, groups, styles)
 		BlinkCmpDocSeparator = { fg = groups.border },
 		BlinkCmpSignatureHelp = { fg = p.color200, bg = p.color700 },
 		BlinkCmpSignatureHelpBorder = { fg = groups.border, bg = p.color700 },
-		BlinkCmpSignatureHelpActiveParameter = { bg = p.placeholder, style = "bold" },
+		BlinkCmpSignatureHelpActiveParameter = { bg = p.placeholder, style = styles.bold },
 
 		-- Per-kind icons (match the syntax color scheme)
 		BlinkCmpKindText = { fg = p.color200 },
@@ -42,8 +42,8 @@ function M.get(p, groups, styles)
 		BlinkCmpKindFile = { fg = p.color300 },
 		BlinkCmpKindReference = { fg = p.tide },
 		BlinkCmpKindFolder = { fg = p.crimson },
-		BlinkCmpKindEnumMember = { fg = p.violet },
-		BlinkCmpKindConstant = { fg = p.violet, style = "bold" },
+		BlinkCmpKindEnumMember = { fg = p.tide },
+		BlinkCmpKindConstant = { fg = p.tide },
 		BlinkCmpKindStruct = { fg = p.crimson },
 		BlinkCmpKindEvent = { fg = p.gold },
 		BlinkCmpKindOperator = { fg = p.frost },

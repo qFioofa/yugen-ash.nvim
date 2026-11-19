@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- yugen-ash highlight showcase — HTML (.html)
+
+  Open with the theme:
+    nvim -u tests/minimal_init.lua tests/fixtures/langs/html.html
+    YUGEN_ASH_VARIANT=light nvim -u tests/minimal_init.lua tests/fixtures/langs/html.html
+
+  Headless coverage check:
+    scripts/test-highlights.sh html
+
+  Debug: :Inspect, :InspectTree, :YugenAshInspect, :hi <group>
+-->
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>yugen-ash showcase</title>
+		<link rel="stylesheet" href="theme.css" />
+		<style>
+			body {
+				color: #d4d4d4;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- legacy syntax: htmlComment, htmlCommentPart -->
+		<!-- Treesitter: @comment -->
+		<!-- legacy syntax: htmlSpecialTagName, htmlTagName, htmlTagN -->
+		<!-- Treesitter: @tag, @tag.builtin, @tag.delimiter -->
+
+		<!-- legacy syntax: htmlH1, htmlH2, htmlH3 -->
+		<!-- Treesitter: @text.title, @markup.heading -->
+		<h1 id="top">Heading level one</h1>
+		<h2>Heading level two</h2>
+		<h3>Heading level three</h3>
+
+		<!-- legacy syntax: htmlArg, htmlValue, htmlString, htmlEvent -->
+		<!-- Treesitter: @tag.attribute, @string -->
+		<p class="lead" id="intro" data-count="42" title="A paragraph">
+			Hello &amp; welcome&nbsp;to the showcase.
+		</p>
+
+		<!-- legacy syntax: htmlBold, htmlItalic, htmlUnderline, htmlLink -->
+		<!-- Treesitter: @markup.link, @punctuation.bracket -->
+		<p>
+			<strong>Bold</strong>
+			<em>Italic</em>
+			<u>Underline</u>
+			<a href="https://example.com" onclick="return false">Example link</a>
+		</p>
+
+		<!-- legacy syntax: htmlSpecialChar -->
+		<!-- Treesitter: @constant, @punctuation.special -->
+		<p>&copy; &lt; &gt; &#169; &#x2764;</p>
+
+		<!-- legacy syntax: htmlScriptTag, htmlPreProc, htmlPreStmt -->
+		<!-- Treesitter: @tag.builtin, @constant.builtin -->
+		<script type="text/javascript">
+			const answer = 42;
+			console.log("answer", answer);
+		</script>
+		<div class="card" hidden></div>
+	</body>
+</html>

@@ -5,9 +5,9 @@ local M = {}
 
 function M.get(p, groups, styles)
 	local levels = {
-		ERROR = p.error,
-		WARN = p.warning,
-		INFO = p.tide,
+		ERROR = groups.error,
+		WARN = groups.warn,
+		INFO = groups.info,
 		DEBUG = p.color400,
 		TRACE = p.violet,
 	}
@@ -17,7 +17,7 @@ function M.get(p, groups, styles)
 		theme["Notify" .. level .. "Border"] = { fg = color }
 		theme["Notify" .. level .. "Icon"] = { fg = color }
 		theme["Notify" .. level .. "Title"] = { fg = color }
-		theme["Notify" .. level .. "Body"] = { fg = p.color200, bg = p.color700 }
+		theme["Notify" .. level .. "Body"] = { fg = p.color200, bg = styles.panel }
 	end
 
 	return theme

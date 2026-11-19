@@ -24,12 +24,12 @@ function M.get(p, groups, styles)
 		Type = { fg = p.gold },
 		Special = { fg = p.rust },
 		Tag = { fg = p.primary },
-		Delimiter = { fg = p.color200 },
+		Delimiter = { fg = groups.punctuation },
 		SpecialComment = { fg = p.color300 },
-		Comment = { fg = p.color400 },
+		Comment = { fg = groups.comment },
 		Underlined = { style = "underline" },
-		Bold = { style = "bold" },
-		Italic = { style = "italic" },
+		Bold = { style = styles.bold },
+		Italic = { style = styles.italic },
 	}
 end
 

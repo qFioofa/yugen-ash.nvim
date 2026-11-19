@@ -26,7 +26,7 @@ function M.get(p, groups, styles)
 		cssFunctionName = { fg = p.primary },
 		cssFunction = { fg = p.primary },
 		cssUnitDecorators = { fg = p.amber },
-		cssImportant = { fg = p.crimson, style = "bold" },
+		cssImportant = { fg = p.crimson, style = styles.bold },
 		cssBraces = { fg = p.color400 },
 		cssNoise = { fg = p.color400 },
 		cssString = { fg = p.sage },

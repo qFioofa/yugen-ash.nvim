@@ -1,0 +1,64 @@
+// yugen-ash highlight showcase — Protocol Buffers (.proto)
+//
+// Open with the theme:
+//   nvim -u tests/minimal_init.lua tests/fixtures/langs/protobuf.proto
+//   YUGEN_ASH_VARIANT=light nvim -u tests/minimal_init.lua tests/fixtures/langs/protobuf.proto
+//
+// Headless coverage check:
+//   scripts/test-highlights.sh protobuf
+//
+// Debug: :Inspect, :InspectTree, :YugenAshInspect, :hi <group>
+
+// legacy syntax: pbComment
+// Treesitter: @comment
+// Plain comment for pbComment.
+
+// legacy syntax: pbSyntax, pbSyntaxName, pbPackage, pbPackageName
+// legacy syntax: pbImport
+// Treesitter: @keyword, @keyword.import, @type
+syntax = "proto3";
+package yugen.ash.showcase;
+import "google/protobuf/timestamp.proto";
+import public "common.proto";
+
+// legacy syntax: pbOption, pbKeyword
+// Treesitter: @keyword, @constant
+option java_package = "dev.yugen.ash";
+option java_multiple_files = true;
+
+// legacy syntax: pbMessage, pbMessageName, pbType, pbTypeKeyword, pbField
+// legacy syntax: pbFieldRule, pbFieldDefault, pbBool, pbInt, pbFloat, pbString
+// Treesitter: @type, @type.builtin, @type.definition, @field
+// Treesitter: @variable.member, @boolean, @number, @string
+message Theme {
+	string name = 1;
+	int32 version = 2;
+	int64 revision = 3;
+	float ratio = 4;
+	double precise = 5;
+	bool enabled = 6;
+	repeated string tags = 7;
+	optional string description = 8 [default = "none"];
+	bytes payload = 9;
+	google.protobuf.Timestamp created_at = 10;
+	map<string, string> labels = 11;
+}
+
+// legacy syntax: pbEnum, pbEnumName
+// Treesitter: @type, @type.definition, @constant
+enum Mode {
+	MODE_UNSPECIFIED = 0;
+	MODE_LIGHT = 1;
+	MODE_DARK = 2;
+}
+
+// legacy syntax: pbService, pbServiceName, pbRpc
+// Treesitter: @type, @function, @operator
+service ThemeService {
+	rpc GetTheme(ThemeRequest) returns (Theme);
+	rpc StreamThemes(stream ThemeRequest) returns (stream Theme);
+}
+
+message ThemeRequest {
+	string name = 1;
+}

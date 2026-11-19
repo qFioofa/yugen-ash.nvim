@@ -4,7 +4,7 @@ local M = {}
 
 function M.get(p, groups, styles)
 	return {
-		LspSignatureActiveParameter = { bg = p.placeholder, style = "bold" },
+		LspSignatureActiveParameter = { bg = p.placeholder, style = styles.bold },
 		FloatShadow = { bg = p.color800 },
 		FloatShadowThrough = { bg = p.color800 },
 	}

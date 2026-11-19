@@ -1,0 +1,84 @@
+% yugen-ash highlight showcase — LaTeX (.tex)
+%
+% Open with the theme:
+%   nvim -u tests/minimal_init.lua tests/fixtures/langs/latex.tex
+%   YUGEN_ASH_VARIANT=light nvim -u tests/minimal_init.lua tests/fixtures/langs/latex.tex
+%
+% Headless coverage check:
+%   scripts/test-highlights.sh latex
+%
+% Debug: :Inspect, :InspectTree, :YugenAshInspect, :hi <group>
+
+% legacy syntax: texComment
+% Treesitter: @comment
+% Plain comment for texComment.
+% TODO: exercise texTodo with a real TODO marker.
+
+% legacy syntax: texDocType, texDocTypeArgs
+% Treesitter: @keyword
+\documentclass[11pt,a4paper]{article}
+
+% legacy syntax: texStatement, texCmdName, texCmdArgs, texOption
+% Treesitter: @function, @function.macro, @punctuation.delimiter
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+
+% legacy syntax: texNewCmd, texDefName, texCmdArgs
+% Treesitter: @function.macro, @keyword
+\newcommand{\showcase}[1]{\textbf{#1}}
+\newenvironment{note}[1]{\begin{quote}\itshape #1}{\end{quote}}
+
+% legacy syntax: texInputFile
+\input{sections/intro}
+
+\begin{document}
+
+% legacy syntax: texSection, texSectionMarker, texSectionName
+% Treesitter: @markup.heading
+\section{Introduction}\label{sec:intro}
+\subsection{Scope}
+\subsubsection{Details}
+
+% legacy syntax: texBeginEnd, texBeginEndName
+% Treesitter: @markup.environment, @markup.environment.name
+\begin{note}{A note}
+	This is a \showcase{demonstration} of the theme.
+\end{note}
+
+% legacy syntax: texRefZone, texRefLabel, texLabel, texCite
+% Treesitter: @markup.link, @markup.link.label
+See Section~\ref{sec:intro} and \cite{knuth1984texbook}.
+Refer to \label{sec:details}.
+
+% legacy syntax: texType, texTypeStyle
+% Treesitter: @type
+Text can be \textbf{bold}, \textit{italic}, \texttt{monospace}, and \emph{emphasised}.
+
+% legacy syntax: texMathZone, texMath, texMathSymbol, texMathOper
+% legacy syntax: texMathMatcher, texMathDelim, texMathDelimZone
+% legacy syntax: texGreek, texSuperscript, texSubscript
+% Treesitter: @markup.math, @punctuation.special
+The equation
+\[
+	\alpha^2 + \beta_1^2 = \gamma_{max} \sum_{i=1}^{n} x_i
+\]
+is inline math: $E = mc^2$ and \(\theta \leq \pi\).
+
+% legacy syntax: texString, texSpecialChar
+% Treesitter: @string
+\url{https://example.com/~showcase}
+A percent sign: \%, ampersand: \&, underscore: \_, hash: \#.
+
+% legacy syntax: texDelimiter, texOption
+% Treesitter: @punctuation.delimiter
+\textcolor{red}{Highlighted text}
+
+% legacy syntax: texMathMatcher
+\begin{align}
+	a &= b + c \\
+	d &= e - f
+\end{align}
+
+% legacy syntax: texBeginEnd, texBeginEndName
+\end{document}

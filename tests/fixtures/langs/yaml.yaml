@@ -1,0 +1,59 @@
+%YAML 1.2
+---
+# yugen-ash highlight showcase — YAML (.yaml / .yml)
+#
+# Open with the theme:
+#   nvim -u tests/minimal_init.lua tests/fixtures/langs/yaml.yaml
+#   YUGEN_ASH_VARIANT=light nvim -u tests/minimal_init.lua tests/fixtures/langs/yaml.yaml
+#
+# Headless coverage check:
+#   scripts/test-highlights.sh yaml
+#
+# Debug: :Inspect, :InspectTree, :YugenAshInspect, :hi <group>
+
+# --- legacy syntax: yamlDocumentStart, yamlComment, yamlDirective ---
+# --- Treesitter: @comment, @constant.builtin ---
+
+# --- legacy syntax: yamlAnchor, yamlAlias, yamlBlockMappingMerge ---
+# --- Treesitter: @property, @field, @label ---
+defaults: &defaults
+  name: yugen-ash
+  version: 1
+  enabled: true
+
+copy: *defaults
+
+merged:
+  <<: *defaults
+  extra: false
+
+# --- legacy syntax: yamlBlockMappingKey, yamlKeyValueDelimiter, yamlPlainScalar ---
+# --- Treesitter: @property, @boolean, @number ---
+plain: hello world
+integer: 42
+negative: -7
+float: 3.14
+truthy: true
+falsy: false
+nothing: null
+tilde: ~
+
+# --- legacy syntax: yamlString, yamlDoubleQuote, yamlSingleQuote, yamlEscape ---
+# --- Treesitter: @string ---
+double_quoted: "line\nquote\"tab\tunicode\u00e9"
+single_quoted: 'single ''quoted'' value'
+
+# --- legacy syntax: yamlTimestamp, yamlNodeTag ---
+# --- Treesitter: @string, @constant.builtin ---
+timestamp: 2026-11-16T10:00:00Z
+tagged: !!str 123
+
+# --- legacy syntax: yamlBlockCollectionItemStart, yamlFlowIndicator ---
+# --- legacy syntax: yamlFlowMappingKey, yamlFlowString, yamlFlowStringDelimiter ---
+# --- Treesitter: @punctuation.special, @punctuation.delimiter ---
+list:
+  - one
+  - two
+  - [inline, list]
+flow: { key: value, other: "value", number: 1 }
+...

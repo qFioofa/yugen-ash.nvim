@@ -4,8 +4,8 @@ local M = {}
 
 function M.get(p, groups, styles)
 	return {
-		NeogitBranch = { fg = p.tide, style = "bold" },
-		NeogitRemote = { fg = p.violet, style = "bold" },
+		NeogitBranch = { fg = p.tide, style = styles.bold },
+		NeogitRemote = { fg = p.violet, style = styles.bold },
 		NeogitHunkHeader = { fg = p.color200, bg = p.color600 },
 		NeogitHunkHeaderHighlight = { fg = p.primary, bg = p.color600 },
 		NeogitDiffContext = { bg = p.color700 },

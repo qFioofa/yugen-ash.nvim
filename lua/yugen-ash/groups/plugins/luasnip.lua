@@ -16,7 +16,7 @@ function M.get(p, groups, styles)
 		LuasnipExitNodeActive = active,
 		LuasnipFunctionNodeActive = active,
 		LuasnipSnippetNodeActive = active,
-		LuasnipChoiceNodeActive = { bg = p.color600, style = "bold" },
+		LuasnipChoiceNodeActive = { bg = p.color600, style = styles.bold },
 		LuasnipDynamicNodeActive = active,
 		LuasnipRestoreNodeActive = active,
 		LuasnipSnippetActive = active,

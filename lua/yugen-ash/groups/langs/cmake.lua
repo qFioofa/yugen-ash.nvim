@@ -19,7 +19,7 @@ function M.get(p, groups, styles)
 		cmakeRegistry = { fg = p.amber },
 		cmakeEscaped = { fg = p.gold },
 		cmakeComment = { fg = p.color400 },
-		cmakeTodo = { fg = p.gold, style = "bold" },
+		cmakeTodo = { fg = p.gold, style = styles.bold },
 
 		-- CMake Treesitter
 		["@keyword.cmake"] = { fg = p.crimson },
@@ -27,7 +27,7 @@ function M.get(p, groups, styles)
 		["@function.builtin.cmake"] = { fg = p.primary },
 		["@function.call.cmake"] = { fg = p.primary },
 		["@variable.cmake"] = { fg = p.color200 },
-		["@constant.cmake"] = { fg = p.violet, style = "bold" },
+		["@constant.cmake"] = { fg = p.tide },
 		["@string.cmake"] = { fg = p.sage },
 		["@operator.cmake"] = { fg = p.frost },
 		["@property.cmake"] = { fg = p.gold },
